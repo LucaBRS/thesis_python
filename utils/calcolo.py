@@ -175,7 +175,7 @@ def double_coverage(meters1, meters2):
 
 
 
-
+    ## thease code does a simple combination between elemnt
 def simple_combination(list):
     print(len(list))
     permutation = []
@@ -188,3 +188,18 @@ def simple_combination(list):
     print(len(permutation))
     return permutation
 
+
+    ## thiease are the "filan consideration" between each SF of lora and the coverage between two different couple of DC
+def consideration_two_configuarition(firstConfig, config1, secondConfig, config2):
+    difference = 0
+    stringa = firstConfig + " and " + secondConfig + "we have: \n"
+    for i in range(6):
+        difference =( 100*(config1["coverage"]["hata"]["SF"+str(7+i)]-config2["coverage"]["hata"]["SF"+str(7+i)])/
+                    ( (config1["coverage"]["hata"]["SF"+str(7+i)]+config2["coverage"]["hata"]["SF"+str(7+i)])/2 ) )
+        difference =  np.round(difference,2)
+
+        if (config1["coverage"]["hata"]["SF"+str(7+i)] > config2["coverage"]["hata"]["SF"+str(7+i)]):
+            stringa = stringa +"in the SF"+str(7+i)+" LoRa configuration there is a gain of: "+ str(abs(difference)) + "% \n"
+        else:
+            stringa = stringa +"in the SF"+str(7+i)+" LoRa configuration there is a loss of: "+ str(abs(difference)) + "% \n"
+    return stringa
