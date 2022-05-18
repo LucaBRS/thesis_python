@@ -67,7 +67,7 @@ dcsToMeters = dcs
 for i in dcsToMeters:
     i['meters'] = []
     for j in meters:
-        
+
         # try:
             # creo una variabile tipo dict
             dictionary ={
@@ -81,8 +81,8 @@ for i in dcsToMeters:
             i["meters"].append(dictionary)
 with open('./risultati/distance_power.json','w') as file:
     json.dump(dcsToMeters,file)
-######    
-    
+######
+
 ######
     ## single coverage calculation for each DC
 singleCoverage = []
@@ -104,15 +104,61 @@ dic ={}
 doubleCoverage = []
 for dc in dcs:
     id_dc.append(dc["id"])
-
+counter = 0
 for coppia in calc.simple_combination(dcsToMeters):
-    dic = { "id_dc_1":coppia[0]["id"],
+    dic = { "id":counter,
+           "id_dc_1":coppia[0]["id"],
            "id_dc_2": coppia[1]["id"],
             "coverage": calc.double_coverage(coppia[0]["meters"],coppia[1]["meters"])
-
     }
+    counter +=1
     doubleCoverage.append(dic)
 
 with open('./risultati/double_coverage.json','w') as file:
     json.dump(doubleCoverage,file)
 ######
+
+######
+    ## finding the best coverage with SF12
+cover = 0
+couple ={}
+for double in doubleCoverage:
+    if double["coverage"]["hata"]["SF12"] > cover:
+        cover = double["coverage"]["hata"]["SF12"]
+        couple = double
+######
+
+######
+    ## findign couple with min and max ToA
+max_toa = 0
+min_toa = 88888888888888888888888888888888
+couple_max = {}
+couple_min = {}
+for double in doubleCoverage:
+    if double["coverage"]["tot_trasmission_time_hata"]["tot_ToA"] > max_toa:
+        max_toa = double["coverage"]["tot_trasmission_time_hata"]["tot_ToA"]
+        couple_max = double
+    if double["coverage"]["tot_trasmission_time_hata"]["tot_ToA"] < min_toa:
+        min_toa = double["coverage"]["tot_trasmission_time_hata"]["tot_ToA"]
+        couple_min = double
+
+stringa = ( "(HATA) couple with best coverage: " + str(couple["id"]) + " with SF12 coverage of " + str(cover) + "% "+"and total ToA: " + str(couple["coverage"]["tot_trasmission_time_hata"]["tot_ToA"]) + "\n" +
+            "(HATA) couple with min ToA: " + str(couple_min["id"]) + " with total ToA: " + str(couple_min["coverage"]["tot_trasmission_time_hata"]["tot_ToA"]) + "\n" +
+            "(HATA) couple with min ToA: " + str(couple_max["id"]) + " with total ToA: " + str(couple_max["coverage"]["tot_trasmission_time_hata"]["tot_ToA"]) + "\n\n"    )
+
+
+
+stringa = stringa + "\t\t\t (HATA) \n"
+stringa = stringa + "Best coverage \t\t" + "Min ToA \t\t" + "Max ToA" + "\n"
+
+for i in range(6):
+    stringa = (stringa +
+               "SF"+str(7+i) +": " + str(couple["coverage"]["hata"]["SF"+str(7+i)]) +"%"+ "\t\t" +
+               "SF"+str(7+i) +": " + str(couple_min["coverage"]["hata"]["SF"+str(7+i)]) +"%"+ "\t\t" +
+               "SF"+str(7+i) +": " + str(couple_max["coverage"]["hata"]["SF"+str(7+i)]) +"%"+ "\n")
+
+stringa = (stringa + "\n" +
+           "ToA"+": " + str(couple["coverage"]["tot_trasmission_time_hata"]["tot_ToA"]) + "\t\t" +
+           "ToA"+": " + str(couple_min["coverage"]["tot_trasmission_time_hata"]["tot_ToA"]) + "\t\t" +
+           "ToA"+": " + str(couple_max["coverage"]["tot_trasmission_time_hata"]["tot_ToA"]) + "\n")
+print(stringa)

@@ -17,11 +17,11 @@ def time_on_air(i):
     PL = 8 # payload in byte
     CRC = 1 # used to determine if all the byte are recived correctly "Cyclic Redundancy Ceck" (for LoRa defoult CRC = 1)
     H = 1 # header, explicit H=0; implicit H=1
-    
-    DE = 1 # low data rate optimize, enabled: DE=1 
+
+    DE = 1 # low data rate optimize, enabled: DE=1
     CR = [1,2,3,4] # Coding Rate, defoult is CR = 1
     CR = 1
-        
+
     sf=SF[i]
     T_s = 2**sf / BW # Symbol Time
     T_payload = ( T_s*(8 + np.maximum(   ceil(((8*PL - 4*sf +28 + 16*CRC -20*H)/(4*(sf - 2*DE)))*(CR +4))  ,0 )) )
@@ -135,11 +135,11 @@ def double_coverage(meters1, meters2):
     if(len(meters1) != len(meters2)):
         print("problema con i meters qualcosa non coincide con lunghezza")
         return Error
-    
+
     for sensibility in sensibilities:
         fs_counter = 0
         hata_counter = 0
-        
+
         for i in range(len(meters1)):
             if(meters1[i]["id"] != meters2[i]["id"]):
                 print("meters non in ordine crescente")
@@ -158,17 +158,17 @@ def double_coverage(meters1, meters2):
                     hata_counter += 1
                 elif (meters1[i]["recPow"]["hata"] < sensibility[1] and meters2[i]["recPow"]["hata"] > sensibility[1]):
                     hata_counter += 1
-      
+
         dic["freeSpace"][sensibility[0]] = np.round(
             (fs_counter/len(meters1))*100.2)
-       
+
         dic["hata"][sensibility[0]] = np.round(
             (hata_counter/len(meters1))*100, 2)
 
         dic["#_meters_each_sf_hata"][sensibility[0]] = hata_counter - previous_sf_meters
         previous_sf_meters = hata_counter
-        
-        dic["tot_trasmission_time_hata"]["tot_ToA"] = dic["tot_trasmission_time_hata"]["tot_ToA"] + dic["#_meters_each_sf_hata"][sensibility[0]] * time_on_air(sf_counter)
+
+        dic["tot_trasmission_time_hata"]["tot_ToA"] =np.round( dic["tot_trasmission_time_hata"]["tot_ToA"] + dic["#_meters_each_sf_hata"][sensibility[0]] * time_on_air(sf_counter),3 )
         sf_counter +=1
     return dic
 
