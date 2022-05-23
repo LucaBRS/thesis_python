@@ -5,7 +5,7 @@ from math import ceil
 from msilib.schema import Error
 import numpy as np
 
-from test import T_payload
+
 
 SNR_limit = [("SF7", -7.5), ("SF8", -10), ("SF9", -12.5),
                  ("SF10", -15), ("SF11", -17.5), ("SF12", -20)]
@@ -13,7 +13,7 @@ BW = 125*10**3  # in kHz
 NF = 6  # dipende dal dispositivo in uso (hardwere)
 SF = [7,8,9,10,11,12]
 
-def time_on_air(i):
+def _time_on_air(i):
     PL = 8 # payload in byte
     CRC = 1 # used to determine if all the byte are recived correctly "Cyclic Redundancy Ceck" (for LoRa defoult CRC = 1)
     H = 1 # header, explicit H=0; implicit H=1
@@ -28,7 +28,7 @@ def time_on_air(i):
 
     return T_payload
 
-def sensibility_calculation():
+def _sensibility_calculation():
     S = []
     for snr in SNR_limit:
         S.append(
@@ -91,9 +91,11 @@ def lossHata(freq, hConc, hCont, distanza):
 
 def coverage(meters):
     sensibilities = []
-    sensibilities = sensibility_calculation()
+    sensibilities = _sensibility_calculation()
     dic = {"freeSpace": {},
-           "hata": {}}
+           "hata": {"%_tot":{}
+                    }
+           }
     fs_counter = 0
     hata_counter = 0
 
@@ -109,7 +111,7 @@ def coverage(meters):
             # esprimo la copertura in percentuale
         dic["freeSpace"][sensibility[0]] = np.round(
             (fs_counter/len(meters))*100.2)
-        dic["hata"][sensibility[0]] = np.round(
+        dic["hata"]["%_tot"][sensibility[0]] = np.round(
             (hata_counter/len(meters))*100, 2)
 
     return dic
@@ -118,16 +120,12 @@ def coverage(meters):
 # questo dovrebbe comparare i concentratori a due a due e ritornare la percetuale di copertura di entrambi...
 def double_coverage(meters1, meters2):
     sensibilities = []
-    sensibilities = sensibility_calculation()
+    sensibilities = _sensibility_calculation()
     dic = {"freeSpace": {},
-           "hata": {},
-           "#_meters_each_sf_hata":{
-               "description":"meters number excluding the meters with previous SF"
-           },
-           "tot_trasmission_time_hata":{
-               "description":"sum of trasmission time for each meters exlcuding the meters with previous SF",
-               "tot_ToA":0
-           }}
+           "hata": {"%_tot":{},
+                    "#_meters_optimizzation_sf":{},
+                    "avg_optimize_ToA":0
+                    }}
     fs_counter = 0
     hata_counter = 0
     previous_sf_meters = 0
@@ -162,13 +160,16 @@ def double_coverage(meters1, meters2):
         dic["freeSpace"][sensibility[0]] = np.round(
             (fs_counter/len(meters1))*100.2)
 
-        dic["hata"][sensibility[0]] = np.round(
+        dic["hata"]["%_tot"][sensibility[0]] = np.round(
             (hata_counter/len(meters1))*100, 2)
 
-        dic["#_meters_each_sf_hata"][sensibility[0]] = hata_counter - previous_sf_meters
+        dic["hata"]["#_meters_optimizzation_sf"][sensibility[0]] = hata_counter - previous_sf_meters
         previous_sf_meters = hata_counter
 
-        dic["tot_trasmission_time_hata"]["tot_ToA"] =np.round( dic["tot_trasmission_time_hata"]["tot_ToA"] + dic["#_meters_each_sf_hata"][sensibility[0]] * time_on_air(sf_counter),3 )
+        dic["hata"]["avg_optimize_ToA"] = (dic["hata"]["avg_optimize_ToA"] + dic["hata"]["#_meters_optimizzation_sf"][sensibility[0]] * _time_on_air(sf_counter))
+
+        if i == len(meters1)-1:
+            dic["hata"]["avg_optimize_ToA"] = np.round( dic["hata"]["avg_optimize_ToA"] / hata_counter , 3 )
         sf_counter +=1
     return dic
 
@@ -194,11 +195,11 @@ def consideration_two_configuarition(firstConfig, config1, secondConfig, config2
     difference = 0
     stringa = firstConfig + " and " + secondConfig + "we have: \n"
     for i in range(6):
-        difference =( 100*(config1["coverage"]["hata"]["SF"+str(7+i)]-config2["coverage"]["hata"]["SF"+str(7+i)])/
-                    ( (config1["coverage"]["hata"]["SF"+str(7+i)]+config2["coverage"]["hata"]["SF"+str(7+i)])/2 ) )
+        difference =( 100*(config1["coverage"]["hata"]["%_tot"]["SF"+str(7+i)]-config2["coverage"]["hata"]["%_tot"]["SF"+str(7+i)])/
+                    ( (config1["coverage"]["hata"]["%_tot"]["SF"+str(7+i)]+config2["coverage"]["hata"]["%_tot"]["SF"+str(7+i)])/2 ) )
         difference =  np.round(difference,2)
 
-        if (config1["coverage"]["hata"]["SF"+str(7+i)] > config2["coverage"]["hata"]["SF"+str(7+i)]):
+        if (config1["coverage"]["hata"]["%_tot"]["SF"+str(7+i)] > config2["coverage"]["hata"]["%_tot"]["SF"+str(7+i)]):
             stringa = stringa +"in the SF"+str(7+i)+" LoRa configuration there is a gain of: "+ str(abs(difference)) + "% \n"
         else:
             stringa = stringa +"in the SF"+str(7+i)+" LoRa configuration there is a loss of: "+ str(abs(difference)) + "% \n"
