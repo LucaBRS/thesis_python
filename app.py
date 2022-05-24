@@ -63,7 +63,7 @@ with open('./risultati/concentratori.json', 'w') as file:
 ######
 
 ######
-    ## DISTANCE CALCULATION AND RECIVED POWER (freespace and Hata loss)
+    ## DISTANCE CALCULATION AND RECIVED POWER (freespace and hata_medium loss)
 dcsToMeters = dcs
 
 for i in dcsToMeters:
@@ -76,7 +76,10 @@ for i in dcsToMeters:
             "id": j['id'],
             "ditance(Km)": calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']),
             "recPow": {"freeSpace": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "FS"),
-                       "hata": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "hata")}
+                       "hata_medium": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "HATA_MEDIUM"),
+                       "hata_big": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "HATA_BIG"),
+                       "SUI_medium": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "SUI_MEDIUM"),
+                       "SUI_big": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "SUI_BIG")}
         }
 
         # poiche prima ho inizializzato lista vuota uso la funzione append!
@@ -134,8 +137,8 @@ for double in doubleCoverage:
 cover = 0
 bestCoverage = {}
 for double in doubleCoverage:
-    if double["coverage"]["hata"]["%_tot"]["SF12"] > cover:
-        cover = double["coverage"]["hata"]["%_tot"]["SF12"]
+    if double["coverage"]["hata_medium"]["%_tot"]["SF12"] > cover:
+        cover = double["coverage"]["hata_medium"]["%_tot"]["SF12"]
         bestCoverage = double
 ######
 
@@ -146,11 +149,11 @@ min_toa = 88888888888888888888888888888888
 couple_max = {}
 couple_min = {}
 for double in doubleCoverage:
-    if double["coverage"]["hata"]["avg_optimize_ToA"] > max_toa:
-        max_toa = double["coverage"]["hata"]["avg_optimize_ToA"]
+    if double["coverage"]["hata_medium"]["avg_optimize_ToA"] > max_toa:
+        max_toa = double["coverage"]["hata_medium"]["avg_optimize_ToA"]
         couple_max = double
-    if double["coverage"]["hata"]["avg_optimize_ToA"] < min_toa:
-        min_toa = double["coverage"]["hata"]["avg_optimize_ToA"]
+    if double["coverage"]["hata_medium"]["avg_optimize_ToA"] < min_toa:
+        min_toa = double["coverage"]["hata_medium"]["avg_optimize_ToA"]
         couple_min = double
 ######
 
@@ -158,28 +161,28 @@ for double in doubleCoverage:
 
 ######
     ## STRING COMPOSITION !!
-stringa = ("(HATA) chosen couple by 2irg: " + str(choice2irg["id"]) + " with SF12 coverage of " + str(choice2irg["coverage"]["hata"]["%_tot"]["SF12"]) + "% "+"and total ToA: " + str(choice2irg["coverage"]["hata"]["avg_optimize_ToA"]) + "\n" +
-           "(HATA) couple with best coverage: " + str(bestCoverage["id"]) + " with SF12 coverage of " + str(cover) + "% "+"and total ToA: " + str(bestCoverage["coverage"]["hata"]["avg_optimize_ToA"]) + "\n" +
-           "(HATA) couple with min ToA: " + str(couple_min["id"]) + " with total ToA: " + str(couple_min["coverage"]["hata"]["avg_optimize_ToA"]) + "\n" +
-           "(HATA) couple with min ToA: " + str(couple_max["id"]) + " with total ToA: " + str(couple_max["coverage"]["hata"]["avg_optimize_ToA"]) + "\n\n")
+stringa = ("(hata_medium) chosen couple by 2irg: " + str(choice2irg["id"]) + " with SF12 coverage of " + str(choice2irg["coverage"]["hata_medium"]["%_tot"]["SF12"]) + "% "+"and total ToA: " + str(choice2irg["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\n" +
+           "(hata_medium) couple with best coverage: " + str(bestCoverage["id"]) + " with SF12 coverage of " + str(cover) + "% "+"and total ToA: " + str(bestCoverage["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\n" +
+           "(hata_medium) couple with min ToA: " + str(couple_min["id"]) + " with total ToA: " + str(couple_min["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\n" +
+           "(hata_medium) couple with min ToA: " + str(couple_max["id"]) + " with total ToA: " + str(couple_max["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\n\n")
 
 
-stringa = stringa + "\t\t\t\t\t ->(HATA)<- \n"
+stringa = stringa + "\t\t\t\t\t ->(hata_medium)<- \n"
 stringa = stringa+"Chosen couple \t\t" + "Best coverage \t\t" + "Min ToA \t\t" + "Max ToA" + "\n"
 stringa = stringa+"------------------------------------------------------------------------------------\n"
 
 for i in range(6):
     stringa = (stringa +
-               "SF"+str(7+i) + ": " + str(choice2irg["coverage"]["hata"]["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
-               "SF"+str(7+i) + ": " + str(bestCoverage["coverage"]["hata"]["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
-               "SF"+str(7+i) + ": " + str(couple_min["coverage"]["hata"]["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
-               "SF"+str(7+i) + ": " + str(couple_max["coverage"]["hata"]["%_tot"]["SF"+str(7+i)]) + "%" + "\n")
+               "SF"+str(7+i) + ": " + str(choice2irg["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
+               "SF"+str(7+i) + ": " + str(bestCoverage["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
+               "SF"+str(7+i) + ": " + str(couple_min["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
+               "SF"+str(7+i) + ": " + str(couple_max["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]) + "%" + "\n")
 
 stringa = (stringa + "\n" +
-           "ToA"+": " + str(choice2irg["coverage"]["hata"]["avg_optimize_ToA"]) + "\t\t" +
-           "ToA"+": " + str(bestCoverage["coverage"]["hata"]["avg_optimize_ToA"]) + "\t\t" +
-           "ToA"+": " + str(couple_min["coverage"]["hata"]["avg_optimize_ToA"]) + "\t\t" +
-           "ToA"+": " + str(couple_max["coverage"]["hata"]["avg_optimize_ToA"]) + "\n")
+           "ToA"+": " + str(choice2irg["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\t\t" +
+           "ToA"+": " + str(bestCoverage["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\t\t" +
+           "ToA"+": " + str(couple_min["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\t\t" +
+           "ToA"+": " + str(couple_max["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\n")
 
 
 stringa = stringa + "\nwith rispect to the configurations: "  + str(calc.consideration_two_configuarition("chosen by 2irg",choice2irg,"Best Coverage",bestCoverage))

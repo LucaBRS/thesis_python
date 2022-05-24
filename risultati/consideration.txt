@@ -1,24 +1,24 @@
-(HATA) chosen couple by 2irg: 69 with SF12 coverage of 88.69% and total ToA: 0.035
-(HATA) couple with best coverage: 65 with SF12 coverage of 92.35% and total ToA: 0.028
-(HATA) couple with min ToA: 38 with total ToA: 0.016
-(HATA) couple with min ToA: 79 with total ToA: 0.111
+(hata_medium) chosen couple by 2irg: 69 with SF12 coverage of 98.76% and total ToA: 0.01
+(hata_medium) couple with best coverage: 13 with SF12 coverage of 99.38% and total ToA: 0.011
+(hata_medium) couple with min ToA: 65 with total ToA: 0.003
+(hata_medium) couple with min ToA: 48 with total ToA: 0.103
 
-					 ->(HATA)<- 
+					 ->(hata_medium)<- 
 Chosen couple 		Best coverage 		Min ToA 		Max ToA
 ------------------------------------------------------------------------------------
-SF7: 42.46%		SF7: 30.44%		SF7: 48.84%		SF7: 14.07%
-SF8: 54.31%		SF8: 44.53%		SF8: 61.75%		SF8: 18.73%
-SF9: 64.82%		SF9: 59.16%		SF9: 72.32%		SF9: 25.63%
-SF10: 73.95%		SF10: 75.07%		SF10: 80.07%		SF10: 34.5%
-SF11: 81.31%		SF11: 86.26%		SF11: 85.33%		SF11: 45.65%
-SF12: 88.69%		SF12: 92.35%		SF12: 88.69%		SF12: 61.75%
+SF7: 75.34%		SF7: 69.75%		SF7: 77.58%		SF7: 24.89%
+SF8: 82.97%		SF8: 75.26%		SF8: 87.9%		SF8: 32.26%
+SF9: 89.33%		SF9: 83.67%		SF9: 93.22%		SF9: 38.42%
+SF10: 93.66%		SF10: 91.61%		SF10: 96.1%		SF10: 48.57%
+SF11: 96.48%		SF11: 96.89%		SF11: 98.45%		SF11: 61.48%
+SF12: 98.76%		SF12: 99.38%		SF12: 99.23%		SF12: 81.02%
 
-ToA: 0.035		ToA: 0.028		ToA: 0.016		ToA: 0.111
+ToA: 0.01		ToA: 0.011		ToA: 0.003		ToA: 0.103
 
 with rispect to the configurations: chosen by 2irg and Best Coveragewe have: 
-in the SF7 LoRa configuration there is a gain of: 32.98% 
-in the SF8 LoRa configuration there is a gain of: 19.79% 
-in the SF9 LoRa configuration there is a gain of: 9.13% 
-in the SF10 LoRa configuration there is a loss of: 1.5% 
-in the SF11 LoRa configuration there is a loss of: 5.91% 
-in the SF12 LoRa configuration there is a loss of: 4.04% 
+in the SF7 LoRa configuration there is a gain of: 7.71% 
+in the SF8 LoRa configuration there is a gain of: 9.75% 
+in the SF9 LoRa configuration there is a gain of: 6.54% 
+in the SF10 LoRa configuration there is a gain of: 2.21% 
+in the SF11 LoRa configuration there is a loss of: 0.42% 
+in the SF12 LoRa configuration there is a loss of: 0.63% 
