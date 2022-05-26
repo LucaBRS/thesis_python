@@ -79,3 +79,15 @@ def loss_SUI_big(freq, h_gw, h_en, distanza):
     loss = abs( A + 10*gamma*log10(distanza*1000/100) + X_f + X_h + s )
     
     return loss
+
+def loss_ericsson(freq, h_gw, h_en, distanza):
+    
+    a_0 = 36.2
+    a_1 = 30.2
+    a_2 = 12.0
+    a_3 = 0.1
+    
+    g_f = 44.49*log10(freq) - 4.78*(log10(freq))**2
+    
+    loss = a_0 + a_1*log10(distanza) + a_2*log10(h_gw) + a_2*log10(h_gw)*log10(distanza) - 3.2*(log10(11.75*h_en))**2 +g_f
+    return loss

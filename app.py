@@ -79,7 +79,8 @@ for i in dcsToMeters:
                        "hata_medium": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "HATA_MEDIUM"),
                        "hata_big": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "HATA_BIG"),
                        "SUI_medium": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "SUI_MEDIUM"),
-                       "SUI_big": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "SUI_BIG")}
+                       "SUI_big": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "SUI_BIG"),
+                       "ericsson": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "ERICSSON")}
         }
 
         # poiche prima ho inizializzato lista vuota uso la funzione append!
@@ -87,6 +88,7 @@ for i in dcsToMeters:
 with open('./risultati/distance_power.json', 'w') as file:
     json.dump(dcsToMeters, file)
 ######
+
 
 ######
     ## SINGLE COVERAGE FOR EACH DC
@@ -123,6 +125,17 @@ for coppia in calc.simple_combination(dcsToMeters):
 with open('./risultati/double_coverage.json', 'w') as file:
     json.dump(doubleCoverage, file)
 ######
+
+
+######
+    ## ORDERING Distance form DC by VALUE
+for dc in dcsToMeters:
+    dc['meters'] = cl.ordering_by_key_value(dc['meters'],"ditance(Km)")
+
+with open('./risultati/distance_power.json', 'w') as file:
+    json.dump(dcsToMeters, file)
+######
+
 
 ######
     ## DC COUPLE FOR 2IRG
