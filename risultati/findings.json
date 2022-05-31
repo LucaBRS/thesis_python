@@ -1,1 +1,422 @@
-{"choice2irg": {"id": 69, "id_dc_1": "61490730150009", "id_dc_2": "61490730150016", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 75.34, "SF8": 82.97, "SF9": 89.33, "SF10": 93.66, "SF11": 96.48, "SF12": 98.76}, "#_meters_optimizzation_sf": {"SF7": 3636, "SF8": 368, "SF9": 307, "SF10": 209, "SF11": 136, "SF12": 110}, "avg_optimize_ToA": 0.01}, "hata_big": {"%_tot": {"SF7": 8.68, "SF8": 11.87, "SF9": 16.49, "SF10": 22.38, "SF11": 29.67, "SF12": 38.38}, "#_meters_optimizzation_sf": {"SF7": 419, "SF8": 154, "SF9": 223, "SF10": 284, "SF11": 352, "SF12": 420}, "avg_optimize_ToA": 0.097}, "SUI_medium": {"%_tot": {"SF7": 1.76, "SF8": 2.36, "SF9": 3.15, "SF10": 3.87, "SF11": 5.1, "SF12": 6.94}, "#_meters_optimizzation_sf": {"SF7": 85, "SF8": 29, "SF9": 38, "SF10": 35, "SF11": 59, "SF12": 89}, "avg_optimize_ToA": 0.113}, "SUI_big": {"%_tot": {"SF7": 0.04, "SF8": 0.08, "SF9": 0.1, "SF10": 0.17, "SF11": 0.27, "SF12": 0.37}, "#_meters_optimizzation_sf": {"SF7": 2, "SF8": 2, "SF9": 1, "SF10": 3, "SF11": 5, "SF12": 5}, "avg_optimize_ToA": 0.124}, "ericsson": {"%_tot": {"SF7": 9.68, "SF8": 12.54, "SF9": 17.09, "SF10": 21.51, "SF11": 27.23, "SF12": 34.4}, "#_meters_optimizzation_sf": {"SF7": 467, "SF8": 138, "SF9": 220, "SF10": 213, "SF11": 276, "SF12": 346}, "avg_optimize_ToA": 0.089}}}, "hata_medium": {"bestCoverage_hata_medium": {"%_tot": {"SF7": 69.75, "SF8": 75.26, "SF9": 83.67, "SF10": 91.61, "SF11": 96.89, "SF12": 99.38}, "#_meters_optimizzation_sf": {"SF7": 3366, "SF8": 266, "SF9": 406, "SF10": 383, "SF11": 255, "SF12": 120}, "avg_optimize_ToA": 0.011, "id": 13}, "max_toa_hata_medium": {"%_tot": {"SF7": 24.89, "SF8": 32.26, "SF9": 38.42, "SF10": 48.57, "SF11": 61.48, "SF12": 81.02}, "#_meters_optimizzation_sf": {"SF7": 1201, "SF8": 356, "SF9": 297, "SF10": 490, "SF11": 623, "SF12": 943}, "avg_optimize_ToA": 0.103, "id": 48}, "min_toa_hata_medium": {"%_tot": {"SF7": 77.58, "SF8": 87.9, "SF9": 93.22, "SF10": 96.1, "SF11": 98.45, "SF12": 99.23}, "#_meters_optimizzation_sf": {"SF7": 3744, "SF8": 498, "SF9": 257, "SF10": 139, "SF11": 113, "SF12": 38}, "avg_optimize_ToA": 0.003, "id": 65}}, "hata_big": {"bestCoverage_hata_big": {"id": 21, "id_dc_1": "61490730150002", "id_dc_2": "61490730150013", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 69.46, "SF8": 75.63, "SF9": 84.11, "SF10": 91.42, "SF11": 96.81, "SF12": 99.36}, "#_meters_optimizzation_sf": {"SF7": 3352, "SF8": 298, "SF9": 409, "SF10": 353, "SF11": 260, "SF12": 123}, "avg_optimize_ToA": 0.011}, "hata_big": {"%_tot": {"SF7": 9.57, "SF8": 13.99, "SF9": 20.2, "SF10": 27.52, "SF11": 37.13, "SF12": 45.61}, "#_meters_optimizzation_sf": {"SF7": 462, "SF8": 213, "SF9": 300, "SF10": 353, "SF11": 464, "SF12": 409}, "avg_optimize_ToA": 0.079}, "SUI_medium": {"%_tot": {"SF7": 1.97, "SF8": 2.69, "SF9": 3.58, "SF10": 4.66, "SF11": 5.91, "SF12": 7.92}, "#_meters_optimizzation_sf": {"SF7": 95, "SF8": 35, "SF9": 43, "SF10": 52, "SF11": 60, "SF12": 97}, "avg_optimize_ToA": 0.108}, "SUI_big": {"%_tot": {"SF7": 0.17, "SF8": 0.21, "SF9": 0.25, "SF10": 0.25, "SF11": 0.39, "SF12": 0.5}, "#_meters_optimizzation_sf": {"SF7": 8, "SF8": 2, "SF9": 2, "SF10": 0, "SF11": 7, "SF12": 5}, "avg_optimize_ToA": 0.093}, "ericsson": {"%_tot": {"SF7": 10.9, "SF8": 15.38, "SF9": 20.47, "SF10": 26.25, "SF11": 33.9, "SF12": 42.11}, "#_meters_optimizzation_sf": {"SF7": 526, "SF8": 216, "SF9": 246, "SF10": 279, "SF11": 369, "SF12": 396}, "avg_optimize_ToA": 0.083}}}, "max_toa_hata_big": {"id": 74, "id_dc_1": "61490730150010", "id_dc_2": "61490730150015", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 26.34, "SF8": 34.81, "SF9": 43.0, "SF10": 51.14, "SF11": 61.65, "SF12": 79.55}, "#_meters_optimizzation_sf": {"SF7": 1271, "SF8": 409, "SF9": 395, "SF10": 393, "SF11": 507, "SF12": 864}, "avg_optimize_ToA": 0.096}, "hata_big": {"%_tot": {"SF7": 0.81, "SF8": 1.39, "SF9": 2.32, "SF10": 3.56, "SF11": 5.47, "SF12": 8.62}, "#_meters_optimizzation_sf": {"SF7": 39, "SF8": 28, "SF9": 45, "SF10": 60, "SF11": 92, "SF12": 152}, "avg_optimize_ToA": 0.156}, "SUI_medium": {"%_tot": {"SF7": 0.06, "SF8": 0.1, "SF9": 0.15, "SF10": 0.35, "SF11": 0.52, "SF12": 0.62}, "#_meters_optimizzation_sf": {"SF7": 3, "SF8": 2, "SF9": 2, "SF10": 10, "SF11": 8, "SF12": 5}, "avg_optimize_ToA": 0.074}, "SUI_big": {"%_tot": {"SF7": 0.0, "SF8": 0.0, "SF9": 0.0, "SF10": 0.0, "SF11": 0.0, "SF12": 0.0}, "#_meters_optimizzation_sf": {"SF7": 0, "SF8": 0, "SF9": 0, "SF10": 0, "SF11": 0, "SF12": 0}, "avg_optimize_ToA": 0}, "ericsson": {"%_tot": {"SF7": 1.08, "SF8": 1.51, "SF9": 2.36, "SF10": 3.46, "SF11": 4.85, "SF12": 7.23}, "#_meters_optimizzation_sf": {"SF7": 52, "SF8": 21, "SF9": 41, "SF10": 53, "SF11": 67, "SF12": 115}, "avg_optimize_ToA": 0.141}}}, "min_toa_hata_big": {"id": 33, "id_dc_1": "61490730150003", "id_dc_2": "61490730150014", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 47.02, "SF8": 57.31, "SF9": 67.47, "SF10": 77.87, "SF11": 85.68, "SF12": 90.74}, "#_meters_optimizzation_sf": {"SF7": 2269, "SF8": 497, "SF9": 490, "SF10": 502, "SF11": 377, "SF12": 244}, "avg_optimize_ToA": 0.024}, "hata_big": {"%_tot": {"SF7": 10.09, "SF8": 13.05, "SF9": 15.62, "SF10": 18.79, "SF11": 21.49, "SF12": 23.58}, "#_meters_optimizzation_sf": {"SF7": 487, "SF8": 143, "SF9": 124, "SF10": 153, "SF11": 130, "SF12": 101}, "avg_optimize_ToA": 0.038}, "SUI_medium": {"%_tot": {"SF7": 2.69, "SF8": 3.46, "SF9": 4.43, "SF10": 5.43, "SF11": 6.59, "SF12": 8.66}, "#_meters_optimizzation_sf": {"SF7": 130, "SF8": 37, "SF9": 47, "SF10": 48, "SF11": 56, "SF12": 100}, "avg_optimize_ToA": 0.102}, "SUI_big": {"%_tot": {"SF7": 0.25, "SF8": 0.27, "SF9": 0.31, "SF10": 0.37, "SF11": 0.41, "SF12": 0.54}, "#_meters_optimizzation_sf": {"SF7": 12, "SF8": 1, "SF9": 2, "SF10": 3, "SF11": 2, "SF12": 6}, "avg_optimize_ToA": 0.099}, "ericsson": {"%_tot": {"SF7": 10.92, "SF8": 13.47, "SF9": 15.71, "SF10": 18.36, "SF11": 20.35, "SF12": 22.46}, "#_meters_optimizzation_sf": {"SF7": 527, "SF8": 123, "SF9": 108, "SF10": 128, "SF11": 96, "SF12": 102}, "avg_optimize_ToA": 0.04}}}}, "SUI_medium": {"bestCoverage_SUI_medium": {"id": 13, "id_dc_1": "61490730150002", "id_dc_2": "61490730150003", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 69.75, "SF8": 75.26, "SF9": 83.67, "SF10": 91.61, "SF11": 96.89, "SF12": 99.38}, "#_meters_optimizzation_sf": {"SF7": 3366, "SF8": 266, "SF9": 406, "SF10": 383, "SF11": 255, "SF12": 120}, "avg_optimize_ToA": 0.011, "id": 13}, "hata_big": {"%_tot": {"SF7": 11.4, "SF8": 15.17, "SF9": 20.29, "SF10": 26.23, "SF11": 32.93, "SF12": 39.95}, "#_meters_optimizzation_sf": {"SF7": 550, "SF8": 182, "SF9": 247, "SF10": 287, "SF11": 323, "SF12": 339}, "avg_optimize_ToA": 0.075}, "SUI_medium": {"%_tot": {"SF7": 2.67, "SF8": 3.61, "SF9": 4.56, "SF10": 5.64, "SF11": 7.15, "SF12": 9.49}, "#_meters_optimizzation_sf": {"SF7": 129, "SF8": 45, "SF9": 46, "SF10": 52, "SF11": 73, "SF12": 113}, "avg_optimize_ToA": 0.105}, "SUI_big": {"%_tot": {"SF7": 0.31, "SF8": 0.37, "SF9": 0.44, "SF10": 0.5, "SF11": 0.56, "SF12": 0.73}, "#_meters_optimizzation_sf": {"SF7": 15, "SF8": 3, "SF9": 3, "SF10": 3, "SF11": 3, "SF12": 8}, "avg_optimize_ToA": 0.098}, "ericsson": {"%_tot": {"SF7": 12.52, "SF8": 16.41, "SF9": 20.43, "SF10": 25.13, "SF11": 30.63, "SF12": 36.88}, "#_meters_optimizzation_sf": {"SF7": 604, "SF8": 188, "SF9": 194, "SF10": 227, "SF11": 265, "SF12": 302}, "avg_optimize_ToA": 0.072}}}, "max_toa_SUI_medium": {"id": 66, "id_dc_1": "61490730150009", "id_dc_2": "61490730150013", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 68.52, "SF8": 77.17, "SF9": 83.8, "SF10": 89.08, "SF11": 91.34, "SF12": 93.76}, "#_meters_optimizzation_sf": {"SF7": 3307, "SF8": 417, "SF9": 320, "SF10": 255, "SF11": 109, "SF12": 117}, "avg_optimize_ToA": 0.011}, "hata_big": {"%_tot": {"SF7": 7.71, "SF8": 11.48, "SF9": 15.73, "SF10": 20.93, "SF11": 27.97, "SF12": 36.08}, "#_meters_optimizzation_sf": {"SF7": 372, "SF8": 182, "SF9": 205, "SF10": 251, "SF11": 340, "SF12": 391}, "avg_optimize_ToA": 0.096}, "SUI_medium": {"%_tot": {"SF7": 1.39, "SF8": 1.99, "SF9": 2.71, "SF10": 3.4, "SF11": 4.48, "SF12": 6.15}, "#_meters_optimizzation_sf": {"SF7": 67, "SF8": 29, "SF9": 35, "SF10": 33, "SF11": 52, "SF12": 81}, "avg_optimize_ToA": 0.116}, "SUI_big": {"%_tot": {"SF7": 0.0, "SF8": 0.0, "SF9": 0.0, "SF10": 0.02, "SF11": 0.17, "SF12": 0.23}, "#_meters_optimizzation_sf": {"SF7": 0, "SF8": 0, "SF9": 0, "SF10": 1, "SF11": 7, "SF12": 3}, "avg_optimize_ToA": 0.136}, "ericsson": {"%_tot": {"SF7": 8.85, "SF8": 12.04, "SF9": 15.87, "SF10": 20.27, "SF11": 25.98, "SF12": 32.32}, "#_meters_optimizzation_sf": {"SF7": 427, "SF8": 154, "SF9": 185, "SF10": 212, "SF11": 276, "SF12": 306}, "avg_optimize_ToA": 0.084}}}, "min_toa_SUI_medium": {"id": 11, "id_dc_1": "61490730150001", "id_dc_2": "61490730150015", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 20.29, "SF8": 29.13, "SF9": 37.96, "SF10": 48.59, "SF11": 58.37, "SF12": 76.3}, "#_meters_optimizzation_sf": {"SF7": 979, "SF8": 427, "SF9": 426, "SF10": 513, "SF11": 472, "SF12": 865}, "avg_optimize_ToA": 0.1}, "hata_big": {"%_tot": {"SF7": 1.18, "SF8": 1.6, "SF9": 1.78, "SF10": 2.65, "SF11": 3.5, "SF12": 4.99}, "#_meters_optimizzation_sf": {"SF7": 57, "SF8": 20, "SF9": 9, "SF10": 42, "SF11": 41, "SF12": 72}, "avg_optimize_ToA": 0.128}, "SUI_medium": {"%_tot": {"SF7": 0.33, "SF8": 0.44, "SF9": 0.56, "SF10": 0.83, "SF11": 0.95, "SF12": 0.99}, "#_meters_optimizzation_sf": {"SF7": 16, "SF8": 5, "SF9": 6, "SF10": 13, "SF11": 6, "SF12": 2}, "avg_optimize_ToA": 0.018}, "SUI_big": {"%_tot": {"SF7": 0.0, "SF8": 0.02, "SF9": 0.02, "SF10": 0.02, "SF11": 0.06, "SF12": 0.06}, "#_meters_optimizzation_sf": {"SF7": 0, "SF8": 1, "SF9": 0, "SF10": 0, "SF11": 2, "SF12": 0}, "avg_optimize_ToA": 0.055}, "ericsson": {"%_tot": {"SF7": 1.35, "SF8": 1.66, "SF9": 1.89, "SF10": 2.63, "SF11": 3.29, "SF12": 4.37}, "#_meters_optimizzation_sf": {"SF7": 65, "SF8": 15, "SF9": 11, "SF10": 36, "SF11": 32, "SF12": 52}, "avg_optimize_ToA": 0.105}}}}, "SUI_big": {"bestCoverage_SUI_big": {"id": 14, "id_dc_1": "61490730150002", "id_dc_2": "61490730150005", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 49.25, "SF8": 58.12, "SF9": 71.76, "SF10": 88.15, "SF11": 96.02, "SF12": 98.82}, "#_meters_optimizzation_sf": {"SF7": 2377, "SF8": 428, "SF9": 658, "SF10": 791, "SF11": 380, "SF12": 135}, "avg_optimize_ToA": 0.012}, "hata_big": {"%_tot": {"SF7": 9.66, "SF8": 12.87, "SF9": 16.64, "SF10": 19.89, "SF11": 24.64, "SF12": 30.4}, "#_meters_optimizzation_sf": {"SF7": 466, "SF8": 155, "SF9": 182, "SF10": 157, "SF11": 229, "SF12": 278}, "avg_optimize_ToA": 0.081}, "SUI_medium": {"%_tot": {"SF7": 2.78, "SF8": 3.65, "SF9": 4.54, "SF10": 5.72, "SF11": 6.8, "SF12": 8.39}, "#_meters_optimizzation_sf": {"SF7": 134, "SF8": 42, "SF9": 43, "SF10": 57, "SF11": 52, "SF12": 77}, "avg_optimize_ToA": 0.081}, "SUI_big": {"%_tot": {"SF7": 0.31, "SF8": 0.46, "SF9": 0.58, "SF10": 0.64, "SF11": 0.85, "SF12": 0.99}, "#_meters_optimizzation_sf": {"SF7": 15, "SF8": 7, "SF9": 6, "SF10": 3, "SF11": 10, "SF12": 7}, "avg_optimize_ToA": 0.063}, "ericsson": {"%_tot": {"SF7": 10.86, "SF8": 13.9, "SF9": 16.72, "SF10": 19.31, "SF11": 22.92, "SF12": 27.91}, "#_meters_optimizzation_sf": {"SF7": 524, "SF8": 147, "SF9": 136, "SF10": 125, "SF11": 174, "SF12": 241}, "avg_optimize_ToA": 0.076}}}, "max_toa_SUI_big": {"id": 47, "id_dc_1": "61490730150007", "id_dc_2": "61490730150009", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 79.18, "SF8": 87.34, "SF9": 93.74, "SF10": 96.77, "SF11": 98.14, "SF12": 99.13}, "#_meters_optimizzation_sf": {"SF7": 3821, "SF8": 394, "SF9": 309, "SF10": 146, "SF11": 66, "SF12": 48}, "avg_optimize_ToA": 0.004, "id": 47}, "hata_big": {"%_tot": {"SF7": 5.01, "SF8": 7.42, "SF9": 11.0, "SF10": 14.92, "SF11": 21.88, "SF12": 31.19}, "#_meters_optimizzation_sf": {"SF7": 242, "SF8": 116, "SF9": 173, "SF10": 189, "SF11": 336, "SF12": 449}, "avg_optimize_ToA": 0.127}, "SUI_medium": {"%_tot": {"SF7": 0.81, "SF8": 1.12, "SF9": 1.62, "SF10": 2.01, "SF11": 2.8, "SF12": 3.75}, "#_meters_optimizzation_sf": {"SF7": 39, "SF8": 15, "SF9": 24, "SF10": 19, "SF11": 38, "SF12": 46}, "avg_optimize_ToA": 0.109}, "SUI_big": {"%_tot": {"SF7": 0.0, "SF8": 0.0, "SF9": 0.0, "SF10": 0.02, "SF11": 0.06, "SF12": 0.1}, "#_meters_optimizzation_sf": {"SF7": 0, "SF8": 0, "SF9": 0, "SF10": 1, "SF11": 2, "SF12": 2}, "avg_optimize_ToA": 0.203}, "ericsson": {"%_tot": {"SF7": 5.72, "SF8": 7.98, "SF9": 11.04, "SF10": 14.26, "SF11": 19.85, "SF12": 26.56}, "#_meters_optimizzation_sf": {"SF7": 276, "SF8": 109, "SF9": 148, "SF10": 155, "SF11": 270, "SF12": 324}, "avg_optimize_ToA": 0.108}}}, "min_toa_SUI_big": {"id": 48, "id_dc_1": "61490730150007", "id_dc_2": "61490730150010", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 24.89, "SF8": 32.26, "SF9": 38.42, "SF10": 48.57, "SF11": 61.48, "SF12": 81.02}, "#_meters_optimizzation_sf": {"SF7": 1201, "SF8": 356, "SF9": 297, "SF10": 490, "SF11": 623, "SF12": 943}, "avg_optimize_ToA": 0.103, "id": 48}, "hata_big": {"%_tot": {"SF7": 1.06, "SF8": 1.95, "SF9": 3.48, "SF10": 5.04, "SF11": 7.56, "SF12": 10.77}, "#_meters_optimizzation_sf": {"SF7": 51, "SF8": 43, "SF9": 74, "SF10": 75, "SF11": 122, "SF12": 155}, "avg_optimize_ToA": 0.127}, "SUI_medium": {"%_tot": {"SF7": 0.17, "SF8": 0.17, "SF9": 0.35, "SF10": 0.44, "SF11": 0.62, "SF12": 0.68}, "#_meters_optimizzation_sf": {"SF7": 8, "SF8": 0, "SF9": 9, "SF10": 4, "SF11": 9, "SF12": 3}, "avg_optimize_ToA": 0.041}, "SUI_big": {"%_tot": {"SF7": 0.0, "SF8": 0.0, "SF9": 0.0, "SF10": 0.0, "SF11": 0.0, "SF12": 0.0}, "#_meters_optimizzation_sf": {"SF7": 0, "SF8": 0, "SF9": 0, "SF10": 0, "SF11": 0, "SF12": 0}, "avg_optimize_ToA": 0}, "ericsson": {"%_tot": {"SF7": 1.41, "SF8": 2.13, "SF9": 3.48, "SF10": 4.81, "SF11": 6.73, "SF12": 9.24}, "#_meters_optimizzation_sf": {"SF7": 68, "SF8": 35, "SF9": 65, "SF10": 64, "SF11": 93, "SF12": 121}, "avg_optimize_ToA": 0.116}}}}, "ericsson": {"bestCoverage_ericsson": {"id": 21, "id_dc_1": "61490730150002", "id_dc_2": "61490730150013", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 69.46, "SF8": 75.63, "SF9": 84.11, "SF10": 91.42, "SF11": 96.81, "SF12": 99.36}, "#_meters_optimizzation_sf": {"SF7": 3352, "SF8": 298, "SF9": 409, "SF10": 353, "SF11": 260, "SF12": 123}, "avg_optimize_ToA": 0.011}, "hata_big": {"%_tot": {"SF7": 9.57, "SF8": 13.99, "SF9": 20.2, "SF10": 27.52, "SF11": 37.13, "SF12": 45.61}, "#_meters_optimizzation_sf": {"SF7": 462, "SF8": 213, "SF9": 300, "SF10": 353, "SF11": 464, "SF12": 409}, "avg_optimize_ToA": 0.079}, "SUI_medium": {"%_tot": {"SF7": 1.97, "SF8": 2.69, "SF9": 3.58, "SF10": 4.66, "SF11": 5.91, "SF12": 7.92}, "#_meters_optimizzation_sf": {"SF7": 95, "SF8": 35, "SF9": 43, "SF10": 52, "SF11": 60, "SF12": 97}, "avg_optimize_ToA": 0.108}, "SUI_big": {"%_tot": {"SF7": 0.17, "SF8": 0.21, "SF9": 0.25, "SF10": 0.25, "SF11": 0.39, "SF12": 0.5}, "#_meters_optimizzation_sf": {"SF7": 8, "SF8": 2, "SF9": 2, "SF10": 0, "SF11": 7, "SF12": 5}, "avg_optimize_ToA": 0.093}, "ericsson": {"%_tot": {"SF7": 10.9, "SF8": 15.38, "SF9": 20.47, "SF10": 26.25, "SF11": 33.9, "SF12": 42.11}, "#_meters_optimizzation_sf": {"SF7": 526, "SF8": 216, "SF9": 246, "SF10": 279, "SF11": 369, "SF12": 396}, "avg_optimize_ToA": 0.083}}}, "max_toa_ericsson": {"id": 74, "id_dc_1": "61490730150010", "id_dc_2": "61490730150015", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 26.34, "SF8": 34.81, "SF9": 43.0, "SF10": 51.14, "SF11": 61.65, "SF12": 79.55}, "#_meters_optimizzation_sf": {"SF7": 1271, "SF8": 409, "SF9": 395, "SF10": 393, "SF11": 507, "SF12": 864}, "avg_optimize_ToA": 0.096}, "hata_big": {"%_tot": {"SF7": 0.81, "SF8": 1.39, "SF9": 2.32, "SF10": 3.56, "SF11": 5.47, "SF12": 8.62}, "#_meters_optimizzation_sf": {"SF7": 39, "SF8": 28, "SF9": 45, "SF10": 60, "SF11": 92, "SF12": 152}, "avg_optimize_ToA": 0.156}, "SUI_medium": {"%_tot": {"SF7": 0.06, "SF8": 0.1, "SF9": 0.15, "SF10": 0.35, "SF11": 0.52, "SF12": 0.62}, "#_meters_optimizzation_sf": {"SF7": 3, "SF8": 2, "SF9": 2, "SF10": 10, "SF11": 8, "SF12": 5}, "avg_optimize_ToA": 0.074}, "SUI_big": {"%_tot": {"SF7": 0.0, "SF8": 0.0, "SF9": 0.0, "SF10": 0.0, "SF11": 0.0, "SF12": 0.0}, "#_meters_optimizzation_sf": {"SF7": 0, "SF8": 0, "SF9": 0, "SF10": 0, "SF11": 0, "SF12": 0}, "avg_optimize_ToA": 0}, "ericsson": {"%_tot": {"SF7": 1.08, "SF8": 1.51, "SF9": 2.36, "SF10": 3.46, "SF11": 4.85, "SF12": 7.23}, "#_meters_optimizzation_sf": {"SF7": 52, "SF8": 21, "SF9": 41, "SF10": 53, "SF11": 67, "SF12": 115}, "avg_optimize_ToA": 0.141}}}, "min_toa_ericsson": {"id": 33, "id_dc_1": "61490730150003", "id_dc_2": "61490730150014", "coverage": {"freeSpace": {"SF7": 100.0, "SF8": 100.0, "SF9": 100.0, "SF10": 100.0, "SF11": 100.0, "SF12": 100.0}, "hata_medium": {"%_tot": {"SF7": 47.02, "SF8": 57.31, "SF9": 67.47, "SF10": 77.87, "SF11": 85.68, "SF12": 90.74}, "#_meters_optimizzation_sf": {"SF7": 2269, "SF8": 497, "SF9": 490, "SF10": 502, "SF11": 377, "SF12": 244}, "avg_optimize_ToA": 0.024}, "hata_big": {"%_tot": {"SF7": 10.09, "SF8": 13.05, "SF9": 15.62, "SF10": 18.79, "SF11": 21.49, "SF12": 23.58}, "#_meters_optimizzation_sf": {"SF7": 487, "SF8": 143, "SF9": 124, "SF10": 153, "SF11": 130, "SF12": 101}, "avg_optimize_ToA": 0.038}, "SUI_medium": {"%_tot": {"SF7": 2.69, "SF8": 3.46, "SF9": 4.43, "SF10": 5.43, "SF11": 6.59, "SF12": 8.66}, "#_meters_optimizzation_sf": {"SF7": 130, "SF8": 37, "SF9": 47, "SF10": 48, "SF11": 56, "SF12": 100}, "avg_optimize_ToA": 0.102}, "SUI_big": {"%_tot": {"SF7": 0.25, "SF8": 0.27, "SF9": 0.31, "SF10": 0.37, "SF11": 0.41, "SF12": 0.54}, "#_meters_optimizzation_sf": {"SF7": 12, "SF8": 1, "SF9": 2, "SF10": 3, "SF11": 2, "SF12": 6}, "avg_optimize_ToA": 0.099}, "ericsson": {"%_tot": {"SF7": 10.92, "SF8": 13.47, "SF9": 15.71, "SF10": 18.36, "SF11": 20.35, "SF12": 22.46}, "#_meters_optimizzation_sf": {"SF7": 527, "SF8": 123, "SF9": 108, "SF10": 128, "SF11": 96, "SF12": 102}, "avg_optimize_ToA": 0.04}}}}}
+{
+    "choice2irg": {
+        "id": 69,
+        "id_dc_1": "61490730150009",
+        "id_dc_2": "61490730150016",
+        "coverage": {
+            "freeSpace": {
+                "SF7": 100.0,
+                "SF8": 100.0,
+                "SF9": 100.0,
+                "SF10": 100.0,
+                "SF11": 100.0,
+                "SF12": 100.0
+            },
+            "hata_medium": {
+                "%_tot": {
+                    "SF7": 75.34,
+                    "SF8": 82.97,
+                    "SF9": 89.33,
+                    "SF10": 93.66,
+                    "SF11": 96.48,
+                    "SF12": 98.76
+                },
+                "#_meters_optimizzation_sf": {
+                    "SF7": 3636,
+                    "SF8": 368,
+                    "SF9": 307,
+                    "SF10": 209,
+                    "SF11": 136,
+                    "SF12": 110
+                },
+                "avg_optimize_ToA": 0.01
+            },
+            "hata_big": {
+                "%_tot": {
+                    "SF7": 8.68,
+                    "SF8": 11.87,
+                    "SF9": 16.49,
+                    "SF10": 22.38,
+                    "SF11": 29.67,
+                    "SF12": 38.38
+                },
+                "#_meters_optimizzation_sf": {
+                    "SF7": 419,
+                    "SF8": 154,
+                    "SF9": 223,
+                    "SF10": 284,
+                    "SF11": 352,
+                    "SF12": 420
+                },
+                "avg_optimize_ToA": 0.097
+            },
+            "SUI_medium": {
+                "%_tot": {
+                    "SF7": 1.76,
+                    "SF8": 2.36,
+                    "SF9": 3.15,
+                    "SF10": 3.87,
+                    "SF11": 5.1,
+                    "SF12": 6.94
+                },
+                "#_meters_optimizzation_sf": {
+                    "SF7": 85,
+                    "SF8": 29,
+                    "SF9": 38,
+                    "SF10": 35,
+                    "SF11": 59,
+                    "SF12": 89
+                },
+                "avg_optimize_ToA": 0.113
+            },
+            "SUI_big": {
+                "%_tot": {
+                    "SF7": 0.04,
+                    "SF8": 0.08,
+                    "SF9": 0.1,
+                    "SF10": 0.17,
+                    "SF11": 0.27,
+                    "SF12": 0.37
+                },
+                "#_meters_optimizzation_sf": {
+                    "SF7": 2,
+                    "SF8": 2,
+                    "SF9": 1,
+                    "SF10": 3,
+                    "SF11": 5,
+                    "SF12": 5
+                },
+                "avg_optimize_ToA": 0.124
+            },
+            "ericsson": {
+                "%_tot": {
+                    "SF7": 9.68,
+                    "SF8": 12.54,
+                    "SF9": 17.09,
+                    "SF10": 21.51,
+                    "SF11": 27.23,
+                    "SF12": 34.4
+                },
+                "#_meters_optimizzation_sf": {
+                    "SF7": 467,
+                    "SF8": 138,
+                    "SF9": 220,
+                    "SF10": 213,
+                    "SF11": 276,
+                    "SF12": 346
+                },
+                "avg_optimize_ToA": 0.089
+            }
+        }
+    },
+    "hata_medium": {
+        "bestCoverage_hata_medium": {
+            "%_tot": {
+                "SF7": 69.75,
+                "SF8": 75.26,
+                "SF9": 83.67,
+                "SF10": 91.61,
+                "SF11": 96.89,
+                "SF12": 99.38
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 3366,
+                "SF8": 266,
+                "SF9": 406,
+                "SF10": 383,
+                "SF11": 255,
+                "SF12": 120
+            },
+            "avg_optimize_ToA": 0.011,
+            "id": 13
+        },
+        "max_toa_hata_medium": {
+            "%_tot": {
+                "SF7": 24.89,
+                "SF8": 32.26,
+                "SF9": 38.42,
+                "SF10": 48.57,
+                "SF11": 61.48,
+                "SF12": 81.02
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 1201,
+                "SF8": 356,
+                "SF9": 297,
+                "SF10": 490,
+                "SF11": 623,
+                "SF12": 943
+            },
+            "avg_optimize_ToA": 0.103,
+            "id": 48
+        },
+        "min_toa_hata_medium": {
+            "%_tot": {
+                "SF7": 77.58,
+                "SF8": 87.9,
+                "SF9": 93.22,
+                "SF10": 96.1,
+                "SF11": 98.45,
+                "SF12": 99.23
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 3744,
+                "SF8": 498,
+                "SF9": 257,
+                "SF10": 139,
+                "SF11": 113,
+                "SF12": 38
+            },
+            "avg_optimize_ToA": 0.003,
+            "id": 65
+        }
+    },
+    "hata_big": {
+        "bestCoverage_hata_big": {
+            "%_tot": {
+                "SF7": 9.57,
+                "SF8": 13.99,
+                "SF9": 20.2,
+                "SF10": 27.52,
+                "SF11": 37.13,
+                "SF12": 45.61
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 462,
+                "SF8": 213,
+                "SF9": 300,
+                "SF10": 353,
+                "SF11": 464,
+                "SF12": 409
+            },
+            "avg_optimize_ToA": 0.079,
+            "id": 21
+        },
+        "max_toa_hata_big": {
+            "%_tot": {
+                "SF7": 0.81,
+                "SF8": 1.39,
+                "SF9": 2.32,
+                "SF10": 3.56,
+                "SF11": 5.47,
+                "SF12": 8.62
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 39,
+                "SF8": 28,
+                "SF9": 45,
+                "SF10": 60,
+                "SF11": 92,
+                "SF12": 152
+            },
+            "avg_optimize_ToA": 0.156,
+            "id": 74
+        },
+        "min_toa_hata_big": {
+            "%_tot": {
+                "SF7": 10.09,
+                "SF8": 13.05,
+                "SF9": 15.62,
+                "SF10": 18.79,
+                "SF11": 21.49,
+                "SF12": 23.58
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 487,
+                "SF8": 143,
+                "SF9": 124,
+                "SF10": 153,
+                "SF11": 130,
+                "SF12": 101
+            },
+            "avg_optimize_ToA": 0.038,
+            "id": 33
+        }
+    },
+    "SUI_medium": {
+        "bestCoverage_SUI_medium": {
+            "%_tot": {
+                "SF7": 2.67,
+                "SF8": 3.61,
+                "SF9": 4.56,
+                "SF10": 5.64,
+                "SF11": 7.15,
+                "SF12": 9.49
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 129,
+                "SF8": 45,
+                "SF9": 46,
+                "SF10": 52,
+                "SF11": 73,
+                "SF12": 113
+            },
+            "avg_optimize_ToA": 0.105,
+            "id": 13
+        },
+        "max_toa_SUI_medium": {
+            "%_tot": {
+                "SF7": 1.39,
+                "SF8": 1.99,
+                "SF9": 2.71,
+                "SF10": 3.4,
+                "SF11": 4.48,
+                "SF12": 6.15
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 67,
+                "SF8": 29,
+                "SF9": 35,
+                "SF10": 33,
+                "SF11": 52,
+                "SF12": 81
+            },
+            "avg_optimize_ToA": 0.116,
+            "id": 66
+        },
+        "min_toa_SUI_medium": {
+            "%_tot": {
+                "SF7": 0.33,
+                "SF8": 0.44,
+                "SF9": 0.56,
+                "SF10": 0.83,
+                "SF11": 0.95,
+                "SF12": 0.99
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 16,
+                "SF8": 5,
+                "SF9": 6,
+                "SF10": 13,
+                "SF11": 6,
+                "SF12": 2
+            },
+            "avg_optimize_ToA": 0.018,
+            "id": 11
+        }
+    },
+    "SUI_big": {
+        "bestCoverage_SUI_big": {
+            "%_tot": {
+                "SF7": 0.31,
+                "SF8": 0.46,
+                "SF9": 0.58,
+                "SF10": 0.64,
+                "SF11": 0.85,
+                "SF12": 0.99
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 15,
+                "SF8": 7,
+                "SF9": 6,
+                "SF10": 3,
+                "SF11": 10,
+                "SF12": 7
+            },
+            "avg_optimize_ToA": 0.063,
+            "id": 14
+        },
+        "max_toa_SUI_big": {
+            "%_tot": {
+                "SF7": 0.0,
+                "SF8": 0.0,
+                "SF9": 0.0,
+                "SF10": 0.02,
+                "SF11": 0.06,
+                "SF12": 0.1
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 0,
+                "SF8": 0,
+                "SF9": 0,
+                "SF10": 1,
+                "SF11": 2,
+                "SF12": 2
+            },
+            "avg_optimize_ToA": 0.203,
+            "id": 47
+        },
+        "min_toa_SUI_big": {
+            "%_tot": {
+                "SF7": 0.0,
+                "SF8": 0.0,
+                "SF9": 0.0,
+                "SF10": 0.0,
+                "SF11": 0.0,
+                "SF12": 0.0
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 0,
+                "SF8": 0,
+                "SF9": 0,
+                "SF10": 0,
+                "SF11": 0,
+                "SF12": 0
+            },
+            "avg_optimize_ToA": 0,
+            "id": 48
+        }
+    },
+    "ericsson": {
+        "bestCoverage_ericsson": {
+            "%_tot": {
+                "SF7": 10.9,
+                "SF8": 15.38,
+                "SF9": 20.47,
+                "SF10": 26.25,
+                "SF11": 33.9,
+                "SF12": 42.11
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 526,
+                "SF8": 216,
+                "SF9": 246,
+                "SF10": 279,
+                "SF11": 369,
+                "SF12": 396
+            },
+            "avg_optimize_ToA": 0.083,
+            "id": 21
+        },
+        "max_toa_ericsson": {
+            "%_tot": {
+                "SF7": 1.08,
+                "SF8": 1.51,
+                "SF9": 2.36,
+                "SF10": 3.46,
+                "SF11": 4.85,
+                "SF12": 7.23
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 52,
+                "SF8": 21,
+                "SF9": 41,
+                "SF10": 53,
+                "SF11": 67,
+                "SF12": 115
+            },
+            "avg_optimize_ToA": 0.141,
+            "id": 74
+        },
+        "min_toa_ericsson": {
+            "%_tot": {
+                "SF7": 10.92,
+                "SF8": 13.47,
+                "SF9": 15.71,
+                "SF10": 18.36,
+                "SF11": 20.35,
+                "SF12": 22.46
+            },
+            "#_meters_optimizzation_sf": {
+                "SF7": 527,
+                "SF8": 123,
+                "SF9": 108,
+                "SF10": 128,
+                "SF11": 96,
+                "SF12": 102
+            },
+            "avg_optimize_ToA": 0.04,
+            "id": 33
+        }
+    }
+}

@@ -76,7 +76,8 @@ def finding(doubleCoverage):
     for double in doubleCoverage:
         if double["coverage"]["hata_big"]["%_tot"]["SF12"] > cover:
             cover = double["coverage"]["hata_big"]["%_tot"]["SF12"]
-            dic["hata_big"]["bestCoverage_hata_big"] = double
+            dic["hata_big"]["bestCoverage_hata_big"] = double["coverage"]["hata_big"]
+            dic["hata_big"]["bestCoverage_hata_big"]['id'] = double['id']
     ######
 
     ######
@@ -88,10 +89,13 @@ def finding(doubleCoverage):
     for double in doubleCoverage:
         if double["coverage"]["hata_big"]["avg_optimize_ToA"] > max_toa_hata_big:
             max_toa_hata_big = double["coverage"]["hata_big"]["avg_optimize_ToA"]
-            dic["hata_big"]["max_toa_hata_big"] = double
+            dic["hata_big"]["max_toa_hata_big"] = double["coverage"]["hata_big"]
+            dic["hata_big"]["max_toa_hata_big"]['id'] = double['id']
+            
         if double["coverage"]["hata_big"]["avg_optimize_ToA"] < min_toa_hata_big:
             min_toa_hata_big = double["coverage"]["hata_big"]["avg_optimize_ToA"]
-            dic["hata_big"]["min_toa_hata_big"] = double
+            dic["hata_big"]["min_toa_hata_big"] = double["coverage"]["hata_big"]
+            dic["hata_big"]["min_toa_hata_big"]['id'] = double['id']
     ######
 
             ###################################
@@ -104,7 +108,8 @@ def finding(doubleCoverage):
     for double in doubleCoverage:
         if double["coverage"]["SUI_medium"]["%_tot"]["SF12"] > cover:
             cover = double["coverage"]["SUI_medium"]["%_tot"]["SF12"]
-            dic["SUI_medium"]["bestCoverage_SUI_medium"] = double
+            dic["SUI_medium"]["bestCoverage_SUI_medium"] = double["coverage"]["SUI_medium"]
+            dic["SUI_medium"]["bestCoverage_SUI_medium"]['id'] = double['id']
     ######
 
     ######
@@ -116,10 +121,13 @@ def finding(doubleCoverage):
     for double in doubleCoverage:
         if double["coverage"]["SUI_medium"]["avg_optimize_ToA"] > max_toa_SUI_medium:
             max_toa_SUI_medium = double["coverage"]["SUI_medium"]["avg_optimize_ToA"]
-            dic["SUI_medium"]["max_toa_SUI_medium"] = double
+            dic["SUI_medium"]["max_toa_SUI_medium"] = double["coverage"]["SUI_medium"]
+            dic["SUI_medium"]["max_toa_SUI_medium"]['id'] = double['id']
+            
         if double["coverage"]["SUI_medium"]["avg_optimize_ToA"] < min_toa_SUI_medium:
             min_toa_SUI_medium = double["coverage"]["SUI_medium"]["avg_optimize_ToA"]
-            dic["SUI_medium"]["min_toa_SUI_medium"] = double
+            dic["SUI_medium"]["min_toa_SUI_medium"] = double["coverage"]["SUI_medium"]
+            dic["SUI_medium"]["min_toa_SUI_medium"]['id'] = double['id']
     ######
 
             ###################################
@@ -132,7 +140,8 @@ def finding(doubleCoverage):
     for double in doubleCoverage:
         if double["coverage"]["SUI_big"]["%_tot"]["SF12"] > cover:
             cover = double["coverage"]["SUI_big"]["%_tot"]["SF12"]
-            dic["SUI_big"]["bestCoverage_SUI_big"] = double
+            dic["SUI_big"]["bestCoverage_SUI_big"] = double["coverage"]["SUI_big"]
+            dic["SUI_big"]["bestCoverage_SUI_big"]['id'] = double['id']
     ######
 
     ######
@@ -144,10 +153,13 @@ def finding(doubleCoverage):
     for double in doubleCoverage:
         if double["coverage"]["SUI_big"]["avg_optimize_ToA"] > max_toa_SUI_big:
             max_toa_SUI_big = double["coverage"]["SUI_big"]["avg_optimize_ToA"]
-            dic["SUI_big"]["max_toa_SUI_big"] = double
+            dic["SUI_big"]["max_toa_SUI_big"] = double["coverage"]["SUI_big"]
+            dic["SUI_big"]["max_toa_SUI_big"]['id'] = double['id']
+            
         if double["coverage"]["SUI_big"]["avg_optimize_ToA"] < min_toa_SUI_big:
             min_toa_SUI_big = double["coverage"]["SUI_big"]["avg_optimize_ToA"]
-            dic["SUI_big"]["min_toa_SUI_big"] = double
+            dic["SUI_big"]["min_toa_SUI_big"] = double["coverage"]["SUI_big"]
+            dic["SUI_big"]["min_toa_SUI_big"]['id'] = double['id']
     ######
 
             ###################################
@@ -160,7 +172,8 @@ def finding(doubleCoverage):
     for double in doubleCoverage:
         if double["coverage"]["ericsson"]["%_tot"]["SF12"] > cover:
             cover = double["coverage"]["ericsson"]["%_tot"]["SF12"]
-            dic["ericsson"]["bestCoverage_ericsson"] = double
+            dic["ericsson"]["bestCoverage_ericsson"] = double["coverage"]["ericsson"]
+            dic["ericsson"]["bestCoverage_ericsson"]['id'] = double['id']
     ######
 
     ######
@@ -172,10 +185,13 @@ def finding(doubleCoverage):
     for double in doubleCoverage:
         if double["coverage"]["ericsson"]["avg_optimize_ToA"] > max_toa_ericsson:
             max_toa_ericsson = double["coverage"]["ericsson"]["avg_optimize_ToA"]
-            dic["ericsson"]["max_toa_ericsson"] = double
+            dic["ericsson"]["max_toa_ericsson"] = double["coverage"]["ericsson"]
+            dic["ericsson"]["max_toa_ericsson"]['id'] = double['id']
+            
         if double["coverage"]["ericsson"]["avg_optimize_ToA"] < min_toa_ericsson:
             min_toa_ericsson = double["coverage"]["ericsson"]["avg_optimize_ToA"]
-            dic["ericsson"]["min_toa_ericsson"] = double
+            dic["ericsson"]["min_toa_ericsson"] = double["coverage"]["ericsson"]
+            dic["ericsson"]["min_toa_ericsson"]['id'] = double['id']
     ######
 
     return dic
