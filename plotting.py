@@ -62,4 +62,32 @@ plt.ylabel('Coverage [%]')
 plt.xticks([(r+ largbar + largbar/2) for r in range(len(arr2i))],sf_name)
 
 plt.legend()
+#plt.show()
+##########################################################################################
+##########################################################################################
+
+with open('./risultati/distance_power.json') as file:
+    distance_power = json.load(file)
+    
+x = np.zeros((7,len(distance_power[0]['meters'])))
+print(x)
+
+index = 0
+for meter in distance_power[0]['meters']:
+   
+    x[0][index] = meter["ditance(Km)"]
+    x[1][index] = meter["recPow"]["freeSpace"]
+    x[2][index] = meter["recPow"]["hata_medium"]
+    x[3][index] = meter["recPow"]["hata_big"]
+    x[4][index] = meter["recPow"]["SUI_medium"]
+    x[5][index] = meter["recPow"]["SUI_big"]
+    x[6][index] = meter["recPow"]["ericsson"]
+    index +=1
+print(x)       
+plt.subplot(2,2,4)     
+plt.title("Recived Power")   
+plt.plot(x[0][:],x[1][:],'r', x[0][:],x[2][:],'g', x[0][:],x[3][:],'g--', x[0][:],x[4][:],'b', x[0][:],x[5][:],'b--' , x[0][:],x[6][:],'black' )
+plt.ylabel('dB')
+plt.xlabel('Distance (km)')
+plt.legend(['FreeSpace','Hata (medium)','Hata (big)','SUI (medium)','SUI (big)','Ericsson'])
 plt.show()

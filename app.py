@@ -3,7 +3,7 @@
 import json
 import utils.cleaner as cl
 import utils.calcolo as calc
-
+import utils.finding as find
 
 ######
     ## FILE OPENING
@@ -137,47 +137,54 @@ with open('./risultati/distance_power.json', 'w') as file:
 ######
 
 
-######
-    ## DC COUPLE FOR 2IRG
+# ######
+#     ## DC COUPLE FOR 2IRG
 choice2irg = {}
-for double in doubleCoverage:
-    if (double["id_dc_1"] == "61490730150009" and double["id_dc_2"] == "61490730150016"):
-        choice2irg = double
-######
+# for double in doubleCoverage:
+#     if (double["id_dc_1"] == "61490730150009" and double["id_dc_2"] == "61490730150016"):
+#         choice2irg = double
+# ######
 
-######
-    ## FINSIGN BEST COVERAGE WITH SF12
-cover = 0
+# ######
+#     ## FINSIGN BEST COVERAGE WITH SF12
+# cover = 0
 bestCoverage = {}
-for double in doubleCoverage:
-    if double["coverage"]["hata_medium"]["%_tot"]["SF12"] > cover:
-        cover = double["coverage"]["hata_medium"]["%_tot"]["SF12"]
-        bestCoverage = double
-######
+# for double in doubleCoverage:
+#     if double["coverage"]["hata_medium"]["%_tot"]["SF12"] > cover:
+#         cover = double["coverage"]["hata_medium"]["%_tot"]["SF12"]
+#         bestCoverage = double
+# ######
 
-######
-    ## FINDIG COUPLE WITH min AND MAX ToA
-max_toa = 0
-min_toa = 88888888888888888888888888888888
+# ######
+#     ## FINDIG COUPLE WITH min AND MAX ToA HATA medium
+# max_toa = 0
+# min_toa = 88888888888888888888888888888888
 couple_max = {}
 couple_min = {}
-for double in doubleCoverage:
-    if double["coverage"]["hata_medium"]["avg_optimize_ToA"] > max_toa:
-        max_toa = double["coverage"]["hata_medium"]["avg_optimize_ToA"]
-        couple_max = double
-    if double["coverage"]["hata_medium"]["avg_optimize_ToA"] < min_toa:
-        min_toa = double["coverage"]["hata_medium"]["avg_optimize_ToA"]
-        couple_min = double
-######
+# for double in doubleCoverage:
+#     if double["coverage"]["hata_medium"]["avg_optimize_ToA"] > max_toa:
+#         max_toa = double["coverage"]["hata_medium"]["avg_optimize_ToA"]
+#         couple_max = double
+#     if double["coverage"]["hata_medium"]["avg_optimize_ToA"] < min_toa:
+#         min_toa = double["coverage"]["hata_medium"]["avg_optimize_ToA"]
+#         couple_min = double
+# ######
 
+findings = find.finding(doubleCoverage)
 
+with open('./risultati/findings.json','w') as file:
+    json.dump(findings, file)
+choice2irg = findings['choice2irg']
+bestCoverage = findings["hata_medium"]["bestCoverage_hata_medium"]
+couple_min = findings["hata_medium"]["min_toa_hata_medium"]
+couple_max = findings["hata_medium"]["max_toa_hata_medium"]
 
 ######
     ## STRING COMPOSITION !!
 stringa = ("(hata_medium) chosen couple by 2irg: " + str(choice2irg["id"]) + " with SF12 coverage of " + str(choice2irg["coverage"]["hata_medium"]["%_tot"]["SF12"]) + "% "+"and total ToA: " + str(choice2irg["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\n" +
-           "(hata_medium) couple with best coverage: " + str(bestCoverage["id"]) + " with SF12 coverage of " + str(cover) + "% "+"and total ToA: " + str(bestCoverage["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\n" +
-           "(hata_medium) couple with min ToA: " + str(couple_min["id"]) + " with total ToA: " + str(couple_min["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\n" +
-           "(hata_medium) couple with min ToA: " + str(couple_max["id"]) + " with total ToA: " + str(couple_max["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\n\n")
+           "(hata_medium) couple with best coverage: " + str(bestCoverage["id"]) + " with SF12 coverage of " + str(bestCoverage["%_tot"]["SF12"]) + "% "+"and total ToA: " + str(bestCoverage["avg_optimize_ToA"]) + "\n" +
+           "(hata_medium) couple with min ToA: " + str(couple_min["id"]) + " with total ToA: " + str(couple_min["avg_optimize_ToA"]) + "\n" +
+           "(hata_medium) couple with min ToA: " + str(couple_max["id"]) + " with total ToA: " + str(couple_max["avg_optimize_ToA"]) + "\n\n")
 
 
 stringa = stringa + "\t\t\t\t\t ->(hata_medium)<- \n"
@@ -187,15 +194,15 @@ stringa = stringa+"-------------------------------------------------------------
 for i in range(6):
     stringa = (stringa +
                "SF"+str(7+i) + ": " + str(choice2irg["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
-               "SF"+str(7+i) + ": " + str(bestCoverage["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
-               "SF"+str(7+i) + ": " + str(couple_min["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
-               "SF"+str(7+i) + ": " + str(couple_max["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]) + "%" + "\n")
+               "SF"+str(7+i) + ": " + str(bestCoverage["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
+               "SF"+str(7+i) + ": " + str(couple_min["%_tot"]["SF"+str(7+i)]) + "%" + "\t\t" +
+               "SF"+str(7+i) + ": " + str(couple_max["%_tot"]["SF"+str(7+i)]) + "%" + "\n")
 
 stringa = (stringa + "\n" +
            "ToA"+": " + str(choice2irg["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\t\t" +
-           "ToA"+": " + str(bestCoverage["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\t\t" +
-           "ToA"+": " + str(couple_min["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\t\t" +
-           "ToA"+": " + str(couple_max["coverage"]["hata_medium"]["avg_optimize_ToA"]) + "\n")
+           "ToA"+": " + str(bestCoverage["avg_optimize_ToA"]) + "\t\t" +
+           "ToA"+": " + str(couple_min["avg_optimize_ToA"]) + "\t\t" +
+           "ToA"+": " + str(couple_max["avg_optimize_ToA"]) + "\n")
 
 
 stringa = stringa + "\nwith rispect to the configurations: "  + str(calc.consideration_two_configuarition("chosen by 2irg",choice2irg,"Best Coverage",bestCoverage))
