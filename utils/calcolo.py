@@ -262,7 +262,7 @@ def double_coverage(meters1, meters2):
             if isnan(dic["SUI_big"]["avg_optimize_ToA"]):
                 dic["SUI_big"]["avg_optimize_ToA"] = 0
             else:
-                dic["SUI_big"]["avg_optimize_ToA"] = np.round( dic["SUI_big"]["avg_optimize_ToA"] / SUI_big_counter , 3 )
+                dic["SUI_big"]["avg_optimize_ToA"] =  dic["SUI_big"]["avg_optimize_ToA"] / SUI_big_counter 
         sf_SUI_big_counter +=1
         
         # ERICSSON

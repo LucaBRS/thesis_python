@@ -114,7 +114,7 @@ with open('./risultati/distance_power.json') as file:
     distance_power = json.load(file)
     
 x = np.zeros((7,len(distance_power[0]['meters'])))
-print(x)
+
 
 index = 0
 for meter in distance_power[0]['meters']:
@@ -127,7 +127,7 @@ for meter in distance_power[0]['meters']:
     x[5][index] = meter["recPow"]["SUI_big"]
     x[6][index] = meter["recPow"]["ericsson"]
     index +=1
-print(x)       
+      
 plt.subplot(2,3,6)     
 plt.title("Recived Power")   
 plt.plot(x[0][:],x[1][:],'r', x[0][:],x[2][:],'g', x[0][:],x[3][:],'g--', x[0][:],x[4][:],'b', x[0][:],x[5][:],'b--' , x[0][:],x[6][:],'black' )
