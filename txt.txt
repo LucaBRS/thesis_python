@@ -1,0 +1,4 @@
+    arr2i[4][i] = (choice2irg['coverage']['ericsson']['%_tot']['SF'+str(7+i)])
+    arrBC[4][i] = (findings['ericsson']['bestCoverage_ericsson']['%_tot']['SF'+str(7+i)])
+    arr_min[4][i] = (findings['ericsson']['min_toa_ericsson']['%_tot']['SF'+str(7+i)])
+    arr_max[4][i] = (findings['ericsson']['max_toa_ericsson']['%_tot']['SF'+str(7+i)])

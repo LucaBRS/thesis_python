@@ -262,7 +262,7 @@ def double_coverage(meters1, meters2):
             if isnan(dic["SUI_big"]["avg_optimize_ToA"]):
                 dic["SUI_big"]["avg_optimize_ToA"] = 0
             else:
-                dic["SUI_big"]["avg_optimize_ToA"] = np.round( dic["SUI_big"]["avg_optimize_ToA"] / SUI_big_counter , 3 )
+                dic["SUI_big"]["avg_optimize_ToA"] =  dic["SUI_big"]["avg_optimize_ToA"] / SUI_big_counter 
         sf_SUI_big_counter +=1
         
         # ERICSSON
@@ -298,15 +298,15 @@ def simple_combination(list):
 
 
     ## thiease are the "filan consideration" between each SF of lora and the coverage between two different couple of DC
-def consideration_two_configuarition(firstConfig, config1, secondConfig, config2):
+def consideration_two_configuarition(firstConfig, choice2irg, secondConfig, config2):
     difference = 0
     stringa = firstConfig + " and " + secondConfig + "we have: \n"
     for i in range(6):
-        difference =( 100*(config1["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]-config2["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)])/
-                    ( (config1["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]+config2["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)])/2 ) )
+        difference =( 100*(choice2irg["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]-config2["%_tot"]["SF"+str(7+i)])/
+                    ( (choice2irg["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]+config2["%_tot"]["SF"+str(7+i)])/2 ) )
         difference =  np.round(difference,2)
 
-        if (config1["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)] > config2["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)]):
+        if (choice2irg["coverage"]["hata_medium"]["%_tot"]["SF"+str(7+i)] > config2["%_tot"]["SF"+str(7+i)]):
             stringa = stringa +"in the SF"+str(7+i)+" LoRa configuration there is a gain of: "+ str(abs(difference)) + "% \n"
         else:
             stringa = stringa +"in the SF"+str(7+i)+" LoRa configuration there is a loss of: "+ str(abs(difference)) + "% \n"
