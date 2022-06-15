@@ -1,4 +1,16 @@
-    arr2i[4][i] = (choice2irg['coverage']['ericsson']['%_tot']['SF'+str(7+i)])
-    arrBC[4][i] = (findings['ericsson']['bestCoverage_ericsson']['%_tot']['SF'+str(7+i)])
-    arr_min[4][i] = (findings['ericsson']['min_toa_ericsson']['%_tot']['SF'+str(7+i)])
-    arr_max[4][i] = (findings['ericsson']['max_toa_ericsson']['%_tot']['SF'+str(7+i)])
+ToA_2i = np.zeros((3))
+ToA_BC = np.zeros((3))
+ToA_min = np.zeros((3))
+
+
+ToA_2i[0] = (choice2irg['coverage']['hata_medium']['avg_optimize_ToA'])
+ToA_BC[0] = (findings['hata_medium']['bestCoverage_hata_medium']['avg_optimize_ToA'])
+ToA_min[0] = (findings['hata_medium']['min_toa_hata_medium']['avg_optimize_ToA'])
+
+ToA_2i[1]= (choice2irg['coverage']['hata_big']['avg_optimize_ToA'])
+ToA_BC[1] = (findings['hata_big']['bestCoverage_hata_big']['avg_optimize_ToA'])
+ToA_min[1]= (findings['hata_big']['min_toa_hata_big']['avg_optimize_ToA'])
+
+ToA_2i[2] = (choice2irg['coverage']['ericsson']['avg_optimize_ToA'])
+ToA_BC[2] = (findings['ericsson']['bestCoverage_ericsson']['avg_optimize_ToA'])
+ToA_min[2] = (findings['ericsson']['min_toa_ericsson']['avg_optimize_ToA'])
