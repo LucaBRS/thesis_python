@@ -1,19 +1,19 @@
-(hata_medium) chosen couple by 2irg: 69 with SF12 coverage of 98.76% and total ToA: 0.01
-(hata_medium) couple with best coverage: 13 with SF12 coverage of 99.38% and total ToA: 0.011
-(hata_medium) couple with min ToA: 65 with total ToA: 0.003
-(hata_medium) couple with min ToA: 48 with total ToA: 0.103
+(hata_medium) chosen couple by 2irg: 69 with SF12 coverage of 98.76% and total ToA: 0.019
+(hata_medium) couple with best coverage: 13 with SF12 coverage of 99.38% and total ToA: 0.021
+(hata_medium) couple with min ToA: 63 with total ToA: 0.007
+(hata_medium) couple with min ToA: 48 with total ToA: 0.2
 
 					 ->(hata_medium)<- 
 Chosen couple 		Best coverage 		Min ToA 		Max ToA
 ------------------------------------------------------------------------------------
-SF7: 75.34%		SF7: 69.75%		SF7: 77.58%		SF7: 24.89%
-SF8: 82.97%		SF8: 75.26%		SF8: 87.9%		SF8: 32.26%
-SF9: 89.33%		SF9: 83.67%		SF9: 93.22%		SF9: 38.42%
-SF10: 93.66%		SF10: 91.61%		SF10: 96.1%		SF10: 48.57%
-SF11: 96.48%		SF11: 96.89%		SF11: 98.45%		SF11: 61.48%
-SF12: 98.76%		SF12: 99.38%		SF12: 99.23%		SF12: 81.02%
+SF7: 75.34%		SF7: 69.75%		SF7: 76.79%		SF7: 24.89%
+SF8: 82.97%		SF8: 75.26%		SF8: 87.48%		SF8: 32.26%
+SF9: 89.33%		SF9: 83.67%		SF9: 93.12%		SF9: 38.42%
+SF10: 93.66%		SF10: 91.61%		SF10: 96.15%		SF10: 48.57%
+SF11: 96.48%		SF11: 96.89%		SF11: 98.14%		SF11: 61.48%
+SF12: 98.76%		SF12: 99.38%		SF12: 99.03%		SF12: 81.02%
 
-ToA: 0.01		ToA: 0.011		ToA: 0.003		ToA: 0.103
+ToA: 0.019		ToA: 0.021		ToA: 0.007		ToA: 0.2
 
 with rispect to the configurations: chosen by 2irg and Best Coveragewe have: 
 in the SF7 LoRa configuration there is a gain of: 7.71% 

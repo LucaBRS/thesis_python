@@ -14,6 +14,10 @@ NF = 6  # dipende dal dispositivo in uso (hardwere)
 SF = [7,8,9,10,11,12]
 
 def _time_on_air(i):
+
+
+
+
     PL = 8 # payload in byte
     CRC = 1 # used to determine if all the byte are recived correctly "Cyclic Redundancy Ceck" (for LoRa defoult CRC = 1)
     H = 1 # header, explicit H=0; implicit H=1
@@ -26,7 +30,12 @@ def _time_on_air(i):
     T_s = 2**sf / BW # Symbol Time
     T_payload = ( T_s*(8 + np.maximum(   ceil(((8*PL - 4*sf +28 + 16*CRC -20*H)/(4*(sf - 2*DE)))*(CR +4))  ,0 )) )
 
-    return T_payload
+    n_preamble = 8
+    T_preamble = (n_preamble + 4.25)*T_s
+
+    ToA = T_preamble + T_payload
+
+    return ToA
 
 def _sensibility_calculation():
     S = []
@@ -138,8 +147,8 @@ def double_coverage(meters1, meters2):
     hata_big_counter = 0
     SUI_medium_counter = 0
     SUI_big_counter = 0
-    ericsson_counter = 0    
-    
+    ericsson_counter = 0
+
     sf_hata_medium_counter=0
     sf_hata_big_counter=0
     sf_SUI_medium_counter=0
@@ -156,7 +165,7 @@ def double_coverage(meters1, meters2):
         SUI_medium_counter = 0
         SUI_big_counter = 0
         ericsson_counter = 0
-        
+
         for i in range(len(meters1)):
             if(meters1[i]["id"] != meters2[i]["id"]):
                 print("meters non in ordine crescente")
@@ -183,7 +192,7 @@ def double_coverage(meters1, meters2):
                     hata_big_counter += 1
                 elif (meters1[i]["recPow"]["hata_big"] < sensibility[1] and meters2[i]["recPow"]["hata_big"] > sensibility[1]):
                     hata_big_counter += 1
-                
+
                 ## SUI
                 if (meters1[i]["recPow"]["SUI_medium"] > sensibility[1] and meters2[i]["recPow"]["SUI_medium"] > sensibility[1]):
                     SUI_medium_counter += 1
@@ -191,26 +200,26 @@ def double_coverage(meters1, meters2):
                     SUI_medium_counter += 1
                 elif (meters1[i]["recPow"]["SUI_medium"] < sensibility[1] and meters2[i]["recPow"]["SUI_medium"] > sensibility[1]):
                     SUI_medium_counter += 1
-                
+
                 if (meters1[i]["recPow"]["SUI_big"] > sensibility[1] and meters2[i]["recPow"]["SUI_big"] > sensibility[1]):
                     SUI_big_counter += 1
                 elif (meters1[i]["recPow"]["SUI_big"] > sensibility[1] and meters2[i]["recPow"]["SUI_big"] < sensibility[1]):
                     SUI_big_counter += 1
                 elif (meters1[i]["recPow"]["SUI_big"] < sensibility[1] and meters2[i]["recPow"]["SUI_big"] > sensibility[1]):
                     SUI_big_counter += 1
-                
+
                 ## ERICSSON
                 if (meters1[i]["recPow"]["ericsson"] > sensibility[1] and meters2[i]["recPow"]["ericsson"] > sensibility[1]):
                     ericsson_counter += 1
                 elif (meters1[i]["recPow"]["ericsson"] > sensibility[1] and meters2[i]["recPow"]["ericsson"] < sensibility[1]):
                     ericsson_counter += 1
                 elif (meters1[i]["recPow"]["ericsson"] < sensibility[1] and meters2[i]["recPow"]["ericsson"] > sensibility[1]):
-                    ericsson_counter += 1   
-                 
+                    ericsson_counter += 1
+
         dic["freeSpace"][sensibility[0]] = np.round(
             (fs_counter/len(meters1))*100.2)
-        
-        # HATA MEDIUM 
+
+        # HATA MEDIUM
         dic["hata_medium"]["%_tot"][sensibility[0]] = np.round(
             (hata_medium_counter/len(meters1))*100, 2)
 
@@ -222,7 +231,7 @@ def double_coverage(meters1, meters2):
         if i == len(meters1)-1:
             dic["hata_medium"]["avg_optimize_ToA"] = np.round( dic["hata_medium"]["avg_optimize_ToA"] / hata_medium_counter , 3 )
         sf_hata_medium_counter +=1
-        
+
         #HATA BIG
         dic["hata_big"]["%_tot"][sensibility[0]] = np.round(
             (hata_big_counter/len(meters1))*100, 2)
@@ -235,7 +244,7 @@ def double_coverage(meters1, meters2):
         if i == len(meters1)-1:
             dic["hata_big"]["avg_optimize_ToA"] = np.round( dic["hata_big"]["avg_optimize_ToA"] / hata_big_counter , 3 )
         sf_hata_big_counter +=1
-        
+
         # SUI MEDIUM
         dic["SUI_medium"]["%_tot"][sensibility[0]] = np.round(
             (SUI_medium_counter/len(meters1))*100, 2)
@@ -248,7 +257,7 @@ def double_coverage(meters1, meters2):
         if i == len(meters1)-1:
             dic["SUI_medium"]["avg_optimize_ToA"] = np.round( dic["SUI_medium"]["avg_optimize_ToA"] / SUI_medium_counter , 3 )
         sf_SUI_medium_counter +=1
-        
+
         # SUI BIG
         dic["SUI_big"]["%_tot"][sensibility[0]] = np.round(
             (SUI_big_counter/len(meters1))*100, 2)
@@ -257,14 +266,14 @@ def double_coverage(meters1, meters2):
         previous_SUI_big_sf_meters = SUI_big_counter
 
         dic["SUI_big"]["avg_optimize_ToA"] = (dic["SUI_big"]["avg_optimize_ToA"] + dic["SUI_big"]["#_meters_optimizzation_sf"][sensibility[0]] * _time_on_air(sf_SUI_big_counter))
-        
+
         if i == len(meters1)-1:
             if isnan(dic["SUI_big"]["avg_optimize_ToA"]):
                 dic["SUI_big"]["avg_optimize_ToA"] = 0
             else:
-                dic["SUI_big"]["avg_optimize_ToA"] =  dic["SUI_big"]["avg_optimize_ToA"] / SUI_big_counter 
+                dic["SUI_big"]["avg_optimize_ToA"] =  dic["SUI_big"]["avg_optimize_ToA"] / SUI_big_counter
         sf_SUI_big_counter +=1
-        
+
         # ERICSSON
         dic["ericsson"]["%_tot"][sensibility[0]] = np.round(
             (ericsson_counter/len(meters1))*100, 2)
@@ -277,9 +286,9 @@ def double_coverage(meters1, meters2):
         if i == len(meters1)-1:
             dic["ericsson"]["avg_optimize_ToA"] = np.round( dic["ericsson"]["avg_optimize_ToA"] / ericsson_counter , 3 )
         sf_ericsson_counter +=1
-        
-        
-        
+
+
+
     return dic
 
 
