@@ -54,7 +54,7 @@ X = np.arange(6)
 
 plt.figure()
 
-plt.title('HATA MEDIUM')
+plt.title('HATA medium city')
 plt.bar(X ,              arr2i[0],  width=largbar,color='y',label="Choice 2iReteGas")
 plt.bar(X + largbar,     arrBC[0],  width=largbar,color='b',label="Best Coverage Couple")
 plt.bar(X + largbar*2,   arr_min[0],width=largbar,color='g',label="Minimum ToA Couple")
@@ -68,7 +68,7 @@ plt.legend()
 
 plt.figure()
 
-plt.title('HATA BIG')
+plt.title('HATA urban city')
 plt.bar(X ,              arr2i[1],  width=largbar,color='y',label="Choice 2iReteGas")
 plt.bar(X + largbar,     arrBC[1],  width=largbar,color='b',label="Best Coverage Couple")
 plt.bar(X + largbar*2,   arr_min[1],width=largbar,color='g',label="Minimum ToA Couple")
@@ -125,7 +125,7 @@ plt.legend()
 ################
 ## ToA ######
 ################
-delay_name = ['Hata medium','Hata big','Ericsson']
+delay_name = ['Hata medium city','Hata urban city','Ericsson']
 
 ToA_2i = np.zeros((3))
 ToA_BC = np.zeros((3))
@@ -163,7 +163,7 @@ plt.xlabel('Loss Type')
 with open('./risultati/distance_power.json') as file:
     distance_power = json.load(file)
 
-x = np.zeros((7,len(distance_power[0]['meters'])))
+x = np.zeros((8,len(distance_power[9]['meters'])))
 
 
 index = 0
@@ -175,13 +175,14 @@ for meter in distance_power[0]['meters']:
     x[3][index] = meter["recPow"]["hata_big"]
     x[4][index] = meter["recPow"]["SUI_medium"]
     x[5][index] = meter["recPow"]["SUI_big"]
-    x[6][index] = meter["recPow"]["ericsson"]
+    x[6][index] = meter["recPow"]["ericsson_medium"]
+    x[7][index] = meter["recPow"]["ericsson"]
     index +=1
 
 plt.figure()
 plt.title("Recived Power")
-plt.plot(x[0][:],x[1][:],'r', x[0][:],x[2][:],'g', x[0][:],x[3][:],'g--', x[0][:],x[4][:],'b', x[0][:],x[5][:],'b--' , x[0][:],x[6][:],'black' )
+plt.plot(x[0][:],x[1][:],'', x[0][:],x[2][:],'g', x[0][:],x[3][:],'g--', x[0][:],x[4][:],'b', x[0][:],x[5][:],'b--' , x[0][:],x[6][:],'r', x[0][:],x[7][:],'r--')
 plt.ylabel('Decibiel')
-plt.xlabel('Distance (km)')
-plt.legend(['FreeSpace','Hata (medium)','Hata (big)','SUI (medium)','SUI (big)','Ericsson'])
+plt.xlabel('Distance (Km)')
+plt.legend(['FreeSpace','Hata (medium city)','Hata (urban city)','SUI (medium city)','SUI (urban city)','Ericsson (medium city)','Ericsson (urban city)'])
 plt.show()

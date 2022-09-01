@@ -80,7 +80,8 @@ for i in dcsToMeters:
                        "hata_big": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "HATA_BIG"),
                        "SUI_medium": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "SUI_MEDIUM"),
                        "SUI_big": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "SUI_BIG"),
-                       "ericsson": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "ERICSSON")}
+                       "ericsson": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "ERICSSON"),
+                       "ericsson_medium": calc.potRic(-16.020, 11.2, 11.2, calc.testHevers(i['latitudine'], i['longitudine'], j['latitudine'], j['longitudine']), 868, "ERICSSON MEDIUM")}
         }
 
         # poiche prima ho inizializzato lista vuota uso la funzione append!
@@ -206,6 +207,7 @@ stringa = (stringa + "\n" +
 
 
 stringa = stringa + "\nwith rispect to the configurations: "  + str(calc.consideration_two_configuarition("chosen by 2irg",choice2irg,"Best Coverage",bestCoverage))
+stringa = stringa + "\nwith rispect to the configurations: "  + str(calc.consideration_two_configuarition("chosen by 2irg",choice2irg,"Best Coverage",couple_min))
 print(stringa)
 with open("./risultati/consideration.txt",'w') as file:
     file.write(stringa)

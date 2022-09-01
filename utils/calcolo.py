@@ -78,6 +78,8 @@ def potRic(potTra, Gtx, Grx, dist, freq, lossType):
         loss  = los.loss_SUI_big(freq, 15, 1.5, dist)
     elif lossType == "ERICSSON":
         loss  = los.loss_ericsson(freq, 15, 1.5, dist)
+    elif lossType == "ERICSSON MEDIUM":
+        loss  = los.loss_ericsson_medium(freq, 15, 1.5, dist)
     potRic = potTra + Gtx + Grx - loss
 
     return np.round(potRic.real, 3)
@@ -136,6 +138,10 @@ def double_coverage(meters1, meters2):
            "ericsson": {"%_tot":{},
                     "#_meters_optimizzation_sf":{},
                     "avg_optimize_ToA":0
+                    },
+           "ericsson_medium": {"%_tot":{},
+                    "#_meters_optimizzation_sf":{},
+                    "avg_optimize_ToA":0
                     }}
     fs_counter = 0
     hata_medium_counter = 0
@@ -144,16 +150,21 @@ def double_coverage(meters1, meters2):
     previous_SUI_medium_sf_meters=0
     previous_SUI_big_sf_meters=0
     previous_ericsson_sf_meters=0
+    previous_ericsson_medium_sf_meters=0
+
     hata_big_counter = 0
     SUI_medium_counter = 0
     SUI_big_counter = 0
     ericsson_counter = 0
+    ericsson_medium_counter=0
 
     sf_hata_medium_counter=0
     sf_hata_big_counter=0
     sf_SUI_medium_counter=0
     sf_SUI_big_counter=0
     sf_ericsson_counter=0
+    sf_ericsson_medium_counter=0
+
     if(len(meters1) != len(meters2)):
         print("problema con i meters qualcosa non coincide con lunghezza")
         return Error
@@ -165,6 +176,8 @@ def double_coverage(meters1, meters2):
         SUI_medium_counter = 0
         SUI_big_counter = 0
         ericsson_counter = 0
+        ericsson_medium_counter=0
+
 
         for i in range(len(meters1)):
             if(meters1[i]["id"] != meters2[i]["id"]):
@@ -215,6 +228,14 @@ def double_coverage(meters1, meters2):
                     ericsson_counter += 1
                 elif (meters1[i]["recPow"]["ericsson"] < sensibility[1] and meters2[i]["recPow"]["ericsson"] > sensibility[1]):
                     ericsson_counter += 1
+
+                if (meters1[i]["recPow"]["ericsson_medium"] > sensibility[1] and meters2[i]["recPow"]["ericsson_medium"] > sensibility[1]):
+                    ericsson_medium_counter += 1
+                elif (meters1[i]["recPow"]["ericsson_medium"] > sensibility[1] and meters2[i]["recPow"]["ericsson_medium"] < sensibility[1]):
+                    ericsson_medium_counter += 1
+                elif (meters1[i]["recPow"]["ericsson_medium"] < sensibility[1] and meters2[i]["recPow"]["ericsson_medium"] > sensibility[1]):
+                    ericsson_medium_counter += 1
+
 
         dic["freeSpace"][sensibility[0]] = np.round(
             (fs_counter/len(meters1))*100.2)
@@ -288,6 +309,18 @@ def double_coverage(meters1, meters2):
         sf_ericsson_counter +=1
 
 
+        dic["ericsson_medium"]["%_tot"][sensibility[0]] = np.round(
+            (ericsson_medium_counter/len(meters1))*100, 2)
+
+        dic["ericsson_medium"]["#_meters_optimizzation_sf"][sensibility[0]] = ericsson_medium_counter - previous_ericsson_medium_sf_meters
+        previous_ericsson_medium_sf_meters = ericsson_medium_counter
+
+        dic["ericsson_medium"]["avg_optimize_ToA"] = (dic["ericsson_medium"]["avg_optimize_ToA"] + dic["ericsson_medium"]["#_meters_optimizzation_sf"][sensibility[0]] * _time_on_air(sf_ericsson_medium_counter))
+
+        if i == len(meters1)-1:
+            dic["ericsson_medium"]["avg_optimize_ToA"] = np.round( dic["ericsson_medium"]["avg_optimize_ToA"] / ericsson_medium_counter , 3 )
+        sf_ericsson_medium_counter +=1
+
 
     return dic
 
@@ -302,7 +335,7 @@ def simple_combination(list):
             if site1 != site2:
                 if (not((site1, site2) in permutation) and not((site2, site1) in permutation)):
                     permutation.append((site1, site2))
-    print(len(permutation))
+    print("number of combination of DCç "+ str(len(permutation)))
     return permutation
 
 

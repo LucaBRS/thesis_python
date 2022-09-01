@@ -22,3 +22,11 @@ in the SF9 LoRa configuration there is a gain of: 6.54%
 in the SF10 LoRa configuration there is a gain of: 2.21% 
 in the SF11 LoRa configuration there is a loss of: 0.42% 
 in the SF12 LoRa configuration there is a loss of: 0.63% 
+
+with rispect to the configurations: chosen by 2irg and Best Coveragewe have: 
+in the SF7 LoRa configuration there is a loss of: 1.91% 
+in the SF8 LoRa configuration there is a loss of: 5.29% 
+in the SF9 LoRa configuration there is a loss of: 4.15% 
+in the SF10 LoRa configuration there is a loss of: 2.62% 
+in the SF11 LoRa configuration there is a loss of: 1.71% 
+in the SF12 LoRa configuration there is a loss of: 0.27% 
